@@ -57,7 +57,22 @@ font-size: 30px;
 
 .plant-list img {
     width: 150px !important;
+ height:100px !important;
+  object-fit: cover;
+}
 
+.plant-list span i {
+  margin: 10px 10px 5px 0px;
+}
+
+.fa-tint {
+  font-size: 20px;
+  color: cadetblue;
+}
+
+.fa-prescription-bottle {
+  font-size: 20px;
+  color: chocolate;
 }
 
 .table-view:first-child {
@@ -138,6 +153,8 @@ margin-top: 0 !important;
   width: 100%;
   object-fit: cover;
 }
+
+
 
 
 .plant-name-div {

@@ -31,7 +31,28 @@ function plantItem(plant) {
     let itemParameters = document.createElement("div");
     itemLink.appendChild(itemParameters);
     itemParameters.classList.add("media-body");
-    itemParameters.textContent = "Rest of the parameters";
+
+    const waterSpan = document.createElement('span');
+    itemParameters.appendChild(waterSpan);
+
+    const iconWater = document.createElement('i');
+    waterSpan.appendChild(iconWater);
+    iconWater.setAttribute("class", "fas fa-tint");
+    const wText = document.createTextNode("in 3 days");
+    waterSpan.appendChild(wText);
+    const breake = document.createElement('br');
+    waterSpan.appendChild(breake);
+
+
+
+    const fertSpan = document.createElement('span');
+    itemParameters.appendChild(fertSpan);
+
+    const iconFert = document.createElement('i');
+    fertSpan.appendChild(iconFert);
+    iconFert.setAttribute("class", "fas fa-prescription-bottle");
+    const fText = document.createTextNode("3 days ago");
+    fertSpan.appendChild(fText);
 }
 
 
