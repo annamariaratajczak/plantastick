@@ -1,7 +1,15 @@
 
 
 for (plant of myPlants) {
-    plantItem(plant);
+
+    var isTodayWater = nextAction(plant.lastWatering, plant.wateringSchedule, "day");
+    var isTodayFert = nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week");
+
+    console.log(isTodayWater);
+    console.log(isTodayFert);
+    if (isTodayWater == "Today" || isTodayFert == "Today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
+        plantItem(plant);
+    }
 }
 
 function plantItem(plant) {

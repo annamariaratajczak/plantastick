@@ -65,6 +65,13 @@ font-size: 30px;
   margin: 10px 10px 5px 0px;
 }
 
+.plant-list .plant-name {
+white-space: nowrap; 
+  width: 100%; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 .fa-tint {
   font-size: 20px;
   color: cadetblue;
