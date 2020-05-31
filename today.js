@@ -7,13 +7,14 @@ for (plant of myPlants) {
 
     console.log(isTodayWater);
     console.log(isTodayFert);
-    if (isTodayWater == "Today" || isTodayFert == "Today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
+    if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
         plantItem(plant);
     }
 }
 
 function plantItem(plant) {
-
+    var isTodayWater = nextAction(plant.lastWatering, plant.wateringSchedule, "day");
+    var isTodayFert = nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week");
 
     let list = document.getElementById("myPlantList")
 
@@ -46,27 +47,31 @@ function plantItem(plant) {
 
     //if statement to append only the one that is due or for today
 
-    const waterSpan = document.createElement('span');
-    itemParameters.appendChild(waterSpan);
+    if (isTodayWater == "today" || isTodayWater.includes("due")) {
+        const waterSpan = document.createElement('span');
+        itemParameters.appendChild(waterSpan);
 
-    const iconWater = document.createElement('i');
-    waterSpan.appendChild(iconWater);
-    iconWater.setAttribute("class", "fas fa-tint");
-    const wText = document.createTextNode(nextAction(plant.lastWatering, plant.wateringSchedule, "day"));
-    waterSpan.appendChild(wText);
-    const breake = document.createElement('br');
-    waterSpan.appendChild(breake);
+        const iconWater = document.createElement('i');
+        waterSpan.appendChild(iconWater);
+        iconWater.setAttribute("class", "fas fa-tint");
+        const wText = document.createTextNode(nextAction(plant.lastWatering, plant.wateringSchedule, "day"));
+        waterSpan.appendChild(wText);
+        const breake = document.createElement('br');
+        waterSpan.appendChild(breake);
+    } 
+    
 
 
+    if (isTodayFert == "today" || isTodayFert.includes("due")) {
+        const fertSpan = document.createElement('span');
+        itemParameters.appendChild(fertSpan);
 
-    const fertSpan = document.createElement('span');
-    itemParameters.appendChild(fertSpan);
-
-    const iconFert = document.createElement('i');
-    fertSpan.appendChild(iconFert);
-    iconFert.setAttribute("class", "fas fa-prescription-bottle");
-    const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
-    fertSpan.appendChild(fText);
+        const iconFert = document.createElement('i');
+        fertSpan.appendChild(iconFert);
+        iconFert.setAttribute("class", "fas fa-prescription-bottle");
+        const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
+        fertSpan.appendChild(fText);
+    }
 }
 
 

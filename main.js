@@ -39,7 +39,7 @@ function nextAction(last, schedule, unit) {
   }
 
   if (days < 1) {
-    return "Today"
+    return "today"
   } else {
     return "in " + Math.round(days) + " days";
   }
