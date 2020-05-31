@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ratchet template page</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Ratchet CSS -->
+    <script src="https://kit.fontawesome.com/9240eef849.js" crossorigin="anonymous"></script>
+    <link href="css/ratchet.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="js/ratchet.js"></script>
+</head>
+
+
+
+
+
+<body>
+    <div class="mainDiv">
+        <!-- Make sure all your bars are the first things in your <body> -->
+        <header class="bar bar-nav">
+            <h1 class="title">My Plants</h1>
+        </header>
+
+        <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+        <div class="content">
+
+            <ul id="myPlantList" class="table-view plant-list">
+
+            </ul>
+
+
+
+        </div>
+        <nav class="bar bar-tab">
+            <a class="tab-item" href="today.html" data-ignore="push">
+                <i class="fas fa-clock"></i>
+            </a>
+            <a class="tab-item" href="addplant.html" data-ignore="push">
+                <i class="fas fa-plus"></i>
+            </a>
+            <a class="tab-item" href="index.html" data-ignore="push">
+                <i class="fas fa-seedling"></i>
+            </a>
+            <a class="tab-item" href="#" data-ignore="push">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        </nav>
+    </div>
+
+    <script src='main.js'></script>
+    <script src='index.js'></script>
+</body>
+
+</html>
