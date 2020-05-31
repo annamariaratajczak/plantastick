@@ -44,6 +44,8 @@ function plantItem(plant) {
     plantName.classList.add("plant-name")
     plantName.textContent = plant.name;
 
+    //if statement to append only the one that is due or for today
+
     const waterSpan = document.createElement('span');
     itemParameters.appendChild(waterSpan);
 

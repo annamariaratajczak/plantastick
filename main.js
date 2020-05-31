@@ -1,5 +1,3 @@
-//let plantsElement = document.getElementById();
-
 let myPlants = [
   {
     name: "Dracaena dracena",
@@ -20,32 +18,15 @@ let myPlants = [
 
   }
 ]
-/*
-for (let plant of myPlants) {
-    let plantElement = document.createElement("div");
 
-    let nextWateringDate = plant.lastWatering + plant.wateringSchedule;
-    let timeToNextWatering = moment(nextWateringDate).fromNow();
-
-    let nextFertilizingDate = plant.lastFertilizing + plant.fertilizingSchedule;
-    let timeToNextFertilizing = moment(nextFertilizingDate).fromNow();
-}
-
-plantElement.innerText = plant.name + ", " + plant.latinName + " next watering " + timeToNextWatering + ", next fertilizing " + timeToNextFertilizing;
-
-plantsElement.appendChild(plantElement);
-*/
-
-function nextWatering(lastWatering, wateringSchedule) {
-
-  let calculate = moment(lastWatering).add(wateringSchedule, "day");
-
-  return calculate.fromNow();
-
-}
 
 
 function nextAction(last, schedule, unit) {
+
+  //var x = new moment()
+  //var y = new moment()
+  //var duration = moment.duration(x.diff(y))
+  // returns duration object with the duration between x and y
 
   let nextDate = moment(last).add(schedule, unit);
   let today = moment();
@@ -59,17 +40,9 @@ function nextAction(last, schedule, unit) {
 
   if (days < 1) {
     return "Today"
-  }  else {
-    return  "in " + Math.round(days) +  " days";
+  } else {
+    return "in " + Math.round(days) + " days";
   }
 
 }
 
-
-
-
-
-//var x = new moment()
-//var y = new moment()
-//var duration = moment.duration(x.diff(y))
-  // returns duration object with the duration between x and y
