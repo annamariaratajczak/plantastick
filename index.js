@@ -58,6 +58,6 @@ function plantItem(plant) {
     const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
     fertSpan.appendChild(fText);
 }
-
+// zahra was here
 
 
