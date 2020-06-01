@@ -1,3 +1,12 @@
+const queryString = window.location.search;
+console.log(queryString);
+//plant.html?plant=0
+
+const urlParams = new URLSearchParams(queryString);
+
+const plantUrl = urlParams.get('plant')
+console.log(plantUrl);
+
 
 
 function createPhoto(plant) {
@@ -141,20 +150,20 @@ function createNotes(plant) {
 let content = document.getElementById("content");
 
 //function createPhoto
-let photo = createPhoto(myPlants[1]);
+let photo = createPhoto(myPlants[plantUrl]);
 content.appendChild(photo);
 
 //function createName 
-let name = createName(myPlants[1]);
+let name = createName(myPlants[plantUrl]);
 content.appendChild(name);
 
 
 //function create schedule
-let schedule = createSchedule(myPlants[1]);
+let schedule = createSchedule(myPlants[plantUrl]);
 content.appendChild(schedule);
 
 //function create notes
-let notes = createNotes(myPlants[1]);
+let notes = createNotes(myPlants[plantUrl]);
 content.appendChild(notes);
 
 
