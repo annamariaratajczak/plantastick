@@ -6,6 +6,7 @@ let myPlants = [
     fertilizingSchedule: 1,
     lastWatering: moment("2020-05-31 21:30:26").valueOf(),
     lastFertilizing: moment("2020-03-26 21:30:25").valueOf(),
+    notes: "",
   },
 
   {
@@ -15,9 +16,21 @@ let myPlants = [
     fertilizingSchedule: 4,
     lastWatering: moment("2020-05-20 21:30:26").valueOf(),
     lastFertilizing: moment("2020-05-03 21:30:25").valueOf(),
+    notes: "",
 
   }
 ]
+
+function displayPlaceHolderText(notes) {
+  console.log(notes)
+  if (notes == "" || typeof notes === "undefined") {
+    console.log(notes)
+   return notes = "Click on Edit to add a note.";
+  } else {
+    return notes;
+  }
+}
+
 
 
 
@@ -44,5 +57,13 @@ function nextAction(last, schedule, unit) {
     return "in " + Math.round(days) + " days";
   }
 
+}
+
+function dateFormat(date) {
+
+  let changeFormat = moment(date);
+
+  return  changeFormat.format('DD-MM-YYYY')
+  
 }
 
