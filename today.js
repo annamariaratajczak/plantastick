@@ -1,4 +1,4 @@
-
+let urlIndex = 0;
 
 for (plant of myPlants) {
 
@@ -8,11 +8,13 @@ for (plant of myPlants) {
     console.log(isTodayWater);
     console.log(isTodayFert);
     if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
-        plantItem(plant);
+        plantItem(plant, urlIndex);
     }
+
+    urlIndex++;
 }
 
-function plantItem(plant) {
+function plantItem(plant, urlIndex) {
     var isTodayWater = nextAction(plant.lastWatering, plant.wateringSchedule, "day");
     var isTodayFert = nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week");
 
@@ -27,7 +29,7 @@ function plantItem(plant) {
     item.appendChild(itemLink);
     itemLink.classList.add("navigate-right");
     itemLink.setAttribute("data-ignore", "push");
-    itemLink.href = "plant.html";
+    itemLink.href = "plant.html?plant=" + urlIndex;
 
     let itemImg = document.createElement("img");
     itemLink.appendChild(itemImg);

@@ -1,10 +1,12 @@
 
+let urlIndex = 0;
 
 for (plant of myPlants) {
-    plantItem(plant);
+    plantItem(plant, urlIndex);
+    urlIndex++;
 }
 
-function plantItem(plant) {
+function plantItem(plant, urlIndex) {
 
 
     let list = document.getElementById("myPlantList")
@@ -18,7 +20,7 @@ function plantItem(plant) {
     item.appendChild(itemLink);
     itemLink.classList.add("navigate-right");
     itemLink.setAttribute("data-ignore", "push");
-    itemLink.href = "plant.html";
+    itemLink.href = "plant.html?plant=" + urlIndex;
 
     let itemImg = document.createElement("img");
     itemLink.appendChild(itemImg);
@@ -58,5 +60,5 @@ function plantItem(plant) {
     const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
     fertSpan.appendChild(fText);
 }
-// zahra was here
+
 
