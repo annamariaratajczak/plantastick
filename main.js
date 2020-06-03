@@ -1,4 +1,4 @@
-let myPlants = [
+let myPlants =
   {
     name: "Dracaena dracena",
     img: "img/plant1.jpg",
@@ -6,19 +6,7 @@ let myPlants = [
     fertilizingSchedule: 1,
     lastWatering: moment("2020-05-31 21:30:26").valueOf(),
     lastFertilizing: moment("2020-03-26 21:30:25").valueOf(),
-  },
-
-  {
-    name: "Snake Plant",
-    img: "img/plant2.jpg",
-    wateringSchedule: 5,
-    fertilizingSchedule: 4,
-    lastWatering: moment("2020-05-20 21:30:26").valueOf(),
-    lastFertilizing: moment("2020-05-03 21:30:25").valueOf(),
-
   }
-]
-
 
 
 function nextAction(last, schedule, unit) {

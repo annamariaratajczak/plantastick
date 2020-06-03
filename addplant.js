@@ -35,6 +35,7 @@ function createName() {
     return div
 }
 
+
 function createSchedule() {
 
     let scheduleDiv = document.createElement("div");
@@ -180,6 +181,47 @@ content.appendChild(schedule);
 let notes = createNotes();
 content.appendChild(notes);
 
+//zahra----------------------
+let myPlantsInfo =[];
+function addPlant() {
+    let plantName = document.getElementById("plant-name").value;
+    let lastWateredDate = document.getElementById("last-watered").value;
+    let LastFertalizeDate = document.getElementById('last-fert').value;
+    let allNotes = document.getElementById('plant-notes').value;
 
+    let newPlant = {
+        plantName: plantName,
+        lastWateredDate: lastWateredDate,
+        LastFertalizeDate: LastFertalizeDate,
+        allNotes : allNotes,
+    };
 
+    myPlantsInfo.push(newPlant);
+    console.log(myPlantsInfo) ;
+}
+function savePlantsLocalStorage() {
+    let plantsAsJsonString = JSON.stringify(myPlantsInfo);
+    localStorage.setItem(key, plantsAsJsonString);
+}
+function loadPlants() {
+    let savedPlantsAsJsonString = localStorage.getItem(key);
+    if (savedPlantsAsJsonString) {
+        myPlantsInfo = JSON.parse(savedPlantsAsJsonString);
+    }
+}
+function addPlantName(){
+    let divPlantName = document.getElementById ("reflect Value");
+    let inpName = document.getElementById("plant-name").value;
+    divPlantName.innerHTML = inpName;
+}
+document.getElementById("save-button").addEventListener("click", addPlantName);
+// let plantx = document.getElementById("save-button");
+// plantx.addEventListener("click", addPlant);
+// const noDays = document.createElement('h2');
+//     spanWater.appendChild(noDays);
+//     noDays.textContent = "5";
 
+    // document.getElementById("no-Days").onclick = function Addnumber() {
+    //     let waterDays = 5; 
+    //     let waterDays =+ 1;
+    //  }​

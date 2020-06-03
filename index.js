@@ -60,4 +60,3 @@ function plantItem(plant) {
 }
 // zahra was here
 
-
