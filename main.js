@@ -18,36 +18,19 @@ let myPlants = [
     notes: "",
   }
 ]
-<<<<<<< HEAD
-  }
-=======
-    notes: "",
-  },
 
-  {
-    name: "Snake Plant",
-    img: "img/plant2.jpg",
-    wateringSchedule: 5,
-    fertilizingSchedule: 4,
-    lastWatering: moment("2020-05-20 21:30:26").valueOf(),
-    lastFertilizing: moment("2020-05-03 21:30:25").valueOf(),
-    notes: "",
-
-  }
-]
 
 function displayPlaceHolderText(notes) {
   console.log(notes)
   if (notes == "" || typeof notes === "undefined") {
     console.log(notes)
-   return notes = "Click on Edit to add a note.";
+    return notes = "Click on Edit to add a note.";
   } else {
     return notes;
   }
 }
 
 
->>>>>>> ded4aede30128a5b10c285582a3e625db7bc099f
 
 
 function nextAction(last, schedule, unit) {
@@ -79,7 +62,7 @@ function dateFormat(date) {
 
   let changeFormat = moment(date);
 
-  return  changeFormat.format('DD-MM-YYYY')
-  
+  return changeFormat.format('DD-MM-YYYY')
+
 }
 
