@@ -184,27 +184,29 @@ content.appendChild(notes);
 //zahra----------------------
 let myPlantsInfo =[];
 function addPlant() {
-    let plantName = document.getElementById("plant-name").value;
+    let name = document.getElementById("plant-name").value;
     let lastWateredDate = document.getElementById("last-watered").value;
-    let lastFertalizeDate = document.getElementById('last-fert').value;
-    let allNotes = document.getElementById('plant-notes').value;
+    let lastFertalizeDate = document.getElementById("last-fert").value;
+    let allNotes = document.getElementById("plant-notes").value;
 
     let newPlant = {
-        plantName: plantName,
+        name: name,
         lastWateredDate: lastWateredDate,
         lastFertalizeDate: lastFertalizeDate,
-        allNotes : allNotes,
+        allNotes: allNotes,
     };
-
+    console.log(newPlant);
     myPlantsInfo.push(newPlant);
-    console.log(myPlantsInfo) ;
+    console.log(myPlantsInfo);
 }
 function savePlantsLocalStorage() {
+    console.log(myPlantsInfo);
     let plantsAsJsonString = JSON.stringify(myPlantsInfo);
-    localStorage.setItem("key", plantsAsJsonString);
+    localStorage.setItem("myPlant", plantsAsJsonString);
 }
+
 function loadPlants() {
-    let savedPlantsAsJsonString = localStorage.getItem("key");
+    let savedPlantsAsJsonString = localStorage.getItem("myPlant");
     if (savedPlantsAsJsonString) {
         myPlantsInfo = JSON.parse(savedPlantsAsJsonString);
     }
