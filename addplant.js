@@ -186,13 +186,13 @@ let myPlantsInfo =[];
 function addPlant() {
     let plantName = document.getElementById("plant-name").value;
     let lastWateredDate = document.getElementById("last-watered").value;
-    let LastFertalizeDate = document.getElementById('last-fert').value;
+    let lastFertalizeDate = document.getElementById('last-fert').value;
     let allNotes = document.getElementById('plant-notes').value;
 
     let newPlant = {
         plantName: plantName,
         lastWateredDate: lastWateredDate,
-        LastFertalizeDate: LastFertalizeDate,
+        lastFertalizeDate: lastFertalizeDate,
         allNotes : allNotes,
     };
 
@@ -201,20 +201,20 @@ function addPlant() {
 }
 function savePlantsLocalStorage() {
     let plantsAsJsonString = JSON.stringify(myPlantsInfo);
-    localStorage.setItem(key, plantsAsJsonString);
+    localStorage.setItem("key", plantsAsJsonString);
 }
 function loadPlants() {
-    let savedPlantsAsJsonString = localStorage.getItem(key);
+    let savedPlantsAsJsonString = localStorage.getItem("key");
     if (savedPlantsAsJsonString) {
         myPlantsInfo = JSON.parse(savedPlantsAsJsonString);
     }
 }
-function addPlantName(){
-    let divPlantName = document.getElementById ("reflect Value");
-    let inpName = document.getElementById("plant-name").value;
-    divPlantName.innerHTML = inpName;
-}
-document.getElementById("save-button").addEventListener("click", addPlantName);
+// function addPlantName(){
+//     let divPlantName = document.getElementById ("reflect Value");
+//     let inpName = document.getElementById("plant-name").value;
+//     divPlantName.innerHTML = inpName;
+// }
+// document.getElementById("save-button").addEventListener("click", addPlantName);
 // let plantx = document.getElementById("save-button");
 // plantx.addEventListener("click", addPlant);
 // const noDays = document.createElement('h2');
