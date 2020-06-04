@@ -193,7 +193,7 @@ function addPlant() {
         plantName: plantName,
         lastWateredDate: lastWateredDate,
         LastFertalizeDate: LastFertalizeDate,
-        allNotes : allNotes,
+        allNotes: allNotes,
     };
 
     myPlantsInfo.push(newPlant);
