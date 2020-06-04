@@ -205,3 +205,13 @@ width: auto;
 .input-field label {
   display: inline-block;
 }
+
+#capture {
+  width: 0px;
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+

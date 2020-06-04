@@ -1,5 +1,5 @@
 let myPlants = [
-  {
+/*  {
     name: "Dracaena dracena",
     img: "img/plant1.jpg",
     wateringSchedule: 7,
@@ -16,7 +16,7 @@ let myPlants = [
     lastWatering: moment("2020-05-20 21:30:26").valueOf(),
     lastFertilizing: moment("2020-05-03 21:30:25").valueOf(),
     notes: "",
-  }
+  }*/
 ]
 
 
@@ -65,4 +65,14 @@ function dateFormat(date) {
   return changeFormat.format('DD-MM-YYYY')
 
 }
+
+
+function loadPlants() {
+  let savedPlantsAsJsonString = localStorage.getItem("myPlant");
+  if (savedPlantsAsJsonString) {
+    myPlants = JSON.parse(savedPlantsAsJsonString);
+  }
+}
+
+loadPlants();
 

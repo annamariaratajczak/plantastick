@@ -7,12 +7,38 @@ function createPhoto() {
     img.classList.add("photo");
     img.setAttribute("src", "img/not-found.png");
     img.setAttribute("alt", "plant-photo");
+    img.setAttribute("id", "photo");
 
-    let button = document.createElement("button");
-    div.appendChild(button);
-    button.classList.add("photo-button");
+    let inputButton = document.createElement("input");
+    div.appendChild(inputButton);
+    inputButton.classList.add("photo-button");
+    inputButton.setAttribute("id", "capture");
+    inputButton.setAttribute("accept", "image/*");
+    inputButton.setAttribute("type", "file")
+    
+
+    //www.youtube.com/watch?v=dbrez37HlJM
+    inputButton.addEventListener("change", (ev) => {
+        if (inputButton.files[0].type.indexOf("image/") > -1) {
+
+            //https://javascript.info/blob
+            var a = new FileReader();
+            // convert to base64
+            a.readAsDataURL(inputButton.files[0]);
+            a.onload = function () {
+                console.log(a.result)
+                img.src = a.result;
+            };
+
+        }
+    })
+
+
+    let label = document.createElement("label");
+    div.appendChild(label);
+    label.setAttribute("for", "capture");
     let i = document.createElement("i");
-    button.appendChild(i);
+    label.appendChild(i);
     i.setAttribute("class", "fas fa-camera");
 
     return div
@@ -182,35 +208,39 @@ let notes = createNotes();
 content.appendChild(notes);
 
 //zahra----------------------
-let myPlantsInfo =[];
-function addPlant() {
-    let name = document.getElementById("plant-name").value;
-    let lastWateredDate = document.getElementById("last-watered").value;
-    let lastFertalizeDate = document.getElementById("last-fert").value;
-    let allNotes = document.getElementById("plant-notes").value;
 
-    let newPlant = {
+
+function addPlant() {
+    let img = document.getElementById("photo");
+    let name = document.getElementById("plant-name").value;
+    let lastWatering = document.getElementById("last-watered").value;
+    let lastFertilizing = document.getElementById("last-fert").value;
+    let notes = document.getElementById("plant-notes").value;
+
+    newPlant = {
+        img: img.src,
         name: name,
-        lastWateredDate: lastWateredDate,
-        lastFertalizeDate: lastFertalizeDate,
-        allNotes: allNotes,
+        lastWatering: lastWatering,
+        lastFertilizing: lastFertilizing,
+        notes: notes,
     };
+
     console.log(newPlant);
-    myPlantsInfo.push(newPlant);
-    console.log(myPlantsInfo);
+    myPlants.push(newPlant);
+    console.log(myPlants);
+    savePlantsLocalStorage()
 }
+
+
 function savePlantsLocalStorage() {
-    console.log(myPlantsInfo);
-    let plantsAsJsonString = JSON.stringify(myPlantsInfo);
+    
+    console.log(myPlants);
+    let plantsAsJsonString = JSON.stringify(myPlants);
+    console.log(plantsAsJsonString);
     localStorage.setItem("myPlant", plantsAsJsonString);
 }
 
-function loadPlants() {
-    let savedPlantsAsJsonString = localStorage.getItem("myPlant");
-    if (savedPlantsAsJsonString) {
-        myPlantsInfo = JSON.parse(savedPlantsAsJsonString);
-    }
-}
+
 // function addPlantName(){
 //     let divPlantName = document.getElementById ("reflect Value");
 //     let inpName = document.getElementById("plant-name").value;
