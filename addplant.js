@@ -15,7 +15,7 @@ function createPhoto() {
     inputButton.setAttribute("id", "capture");
     inputButton.setAttribute("accept", "image/*");
     inputButton.setAttribute("type", "file")
-    
+
 
     //www.youtube.com/watch?v=dbrez37HlJM
     inputButton.addEventListener("change", (ev) => {
@@ -82,12 +82,13 @@ function createSchedule() {
     const spanWater = document.createElement('span');
     waterDiv.appendChild(spanWater);
 
-    const minusWater = document.createElement('button');    
+    const minusWater = document.createElement('button');
     spanWater.appendChild(minusWater);
     minusWater.textContent = "-";
     minusWater.setAttribute("id", "minus_W_button")
 
     const noDays = document.createElement('h2');
+    noDays.setAttribute("id", "noDays");
     spanWater.appendChild(noDays);
     noDays.textContent = "5";
 
@@ -139,6 +140,7 @@ function createSchedule() {
 
     const noOfWeeks = document.createElement('h2');
     spanfert.appendChild(noOfWeeks);
+    noOfWeeks.setAttribute("id", "noOfWeeks");
     noOfWeeks.textContent = "3";
 
     const plusfert = document.createElement('button');
@@ -150,7 +152,7 @@ function createSchedule() {
     fertDiv.appendChild(fertParagraph2);
     fertParagraph2.textContent = "week";
 
-    
+
 
 
     const lastFert = document.createElement('div');
@@ -168,12 +170,12 @@ function createSchedule() {
     lastFertInput.setAttribute("id", "last-fert");
     lastFertInput.setAttribute("name", "last-fert");
 
-return scheduleDiv
-    
+    return scheduleDiv
+
 }
 
 function createNotes() {
-    
+
     const div = document.createElement('div');
     div.classList.add("plant-notes-div");
 
@@ -217,6 +219,8 @@ content.appendChild(notes);
 function addPlant() {
     let img = document.getElementById("photo");
     let name = document.getElementById("plant-name").value;
+    let wateringSchedule = document.getElementById("noDays").textContent;
+    let fertilizingSchedule = document.getElementById("noOfWeeks").textContent;
     let lastWatering = document.getElementById("last-watered").value;
     let lastFertilizing = document.getElementById("last-fert").value;
     let notes = document.getElementById("plant-notes").value;
@@ -224,6 +228,8 @@ function addPlant() {
     newPlant = {
         img: img.src,
         name: name,
+        wateringSchedule: wateringSchedule,
+        fertilizingSchedule: fertilizingSchedule,
         lastWatering: lastWatering,
         lastFertilizing: lastFertilizing,
         notes: notes,
@@ -235,11 +241,12 @@ function addPlant() {
     savePlantsLocalStorage()
 }
 function savePlantsLocalStorage() {
-    
+
     console.log(myPlants);
     let plantsAsJsonString = JSON.stringify(myPlants);
     console.log(plantsAsJsonString);
     localStorage.setItem("myPlant", plantsAsJsonString);
+    window.location.replace("index.html");
 }
 
 let waterDays = 5; 
