@@ -253,19 +253,17 @@ let waterDays = 5;
 function daystoWater() {
     document.getElementById("plus_W_button").onclick = (waterDays++) ;
     document.getElementById("minus_W_button").onclick = (waterDays - 1);
+    document.getElementById("noDays").textContent = waterDays;
     return waterDays;
 }
 let fertalizeWeeks = 3; 
 function weekstoFertalize() {
     document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
     document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
-    noOfWeeks.innerHTML = fertalizeWeeks;
+    document.getElementById("noDays").textContent = fertalizeWeeks;
     return fertalizeWeeks; 
 }
 // document.getElementById("nodays").innerHTML = function daystoWater()
-
-
-
 // document.getElementById("plus_W_button").onclick = daystoWater()
 // let defaultFertaliseDays = 0; 
 // function daystoWater (){
