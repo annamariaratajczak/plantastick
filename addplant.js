@@ -85,6 +85,7 @@ function createSchedule() {
     const minusWater = document.createElement('button');    
     spanWater.appendChild(minusWater);
     minusWater.textContent = "-";
+    minusWater.setAttribute("id", "minus_W_button")
 
     const noDays = document.createElement('h2');
     spanWater.appendChild(noDays);
@@ -93,6 +94,7 @@ function createSchedule() {
     const plusWater = document.createElement('button');
     spanWater.appendChild(plusWater);
     plusWater.textContent = "+";
+    plusWater.setAttribute("id", "plus_W_button")
 
     let waterParagraph2 = document.createElement("p");
     waterDiv.appendChild(waterParagraph2);
@@ -133,6 +135,7 @@ function createSchedule() {
     const minusfert = document.createElement('button');
     spanfert.appendChild(minusfert);
     minusfert.textContent = "-";
+    minusfert.setAttribute("id", "minus_F_button")
 
     const noOfWeeks = document.createElement('h2');
     spanfert.appendChild(noOfWeeks);
@@ -141,6 +144,7 @@ function createSchedule() {
     const plusfert = document.createElement('button');
     spanfert.appendChild(plusfert);
     plusfert.textContent = "+";
+    plusfert.setAttribute("id", "plus_F_button")
 
     let fertParagraph2 = document.createElement("p");
     fertDiv.appendChild(fertParagraph2);
@@ -230,8 +234,6 @@ function addPlant() {
     console.log(myPlants);
     savePlantsLocalStorage()
 }
-
-
 function savePlantsLocalStorage() {
     
     console.log(myPlants);
@@ -240,20 +242,63 @@ function savePlantsLocalStorage() {
     localStorage.setItem("myPlant", plantsAsJsonString);
 }
 
+let waterDays = 5; 
+function daystoWater() {
+    document.getElementById("plus_W_button").onclick = (waterDays++) ;
+    document.getElementById("minus_W_button").onclick = (waterDays - 1);
+    return waterDays;
+}
+let fertalizeWeeks = 3; 
+function weekstoFertalize() {
+    document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
+    document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
+    noOfWeeks.innerHTML = fertalizeWeeks;
+    return fertalizeWeeks; 
+}
+// document.getElementById("nodays").innerHTML = function daystoWater()
 
-// function addPlantName(){
-//     let divPlantName = document.getElementById ("reflect Value");
-//     let inpName = document.getElementById("plant-name").value;
-//     divPlantName.innerHTML = inpName;
+
+
+// document.getElementById("plus_W_button").onclick = daystoWater()
+// let defaultFertaliseDays = 0; 
+// function daystoWater (){
+//     document.getElementById('plusbutton').onclick = (defaultWaterDays++) ;
+//     document.getElementById("minus_button").onclick = (defaultWaterDays - 1);
+//     noOfWeeks.innerHTML = defaultWaterDays;
 // }
 // document.getElementById("save-button").addEventListener("click", addPlantName);
 // let plantx = document.getElementById("save-button");
 // plantx.addEventListener("click", addPlant);
-// const noDays = document.createElement('h2');
-//     spanWater.appendChild(noDays);
-//     noDays.textContent = "5";
+
 
     // document.getElementById("no-Days").onclick = function Addnumber() {
     //     let waterDays = 5; 
     //     let waterDays =+ 1;
     //  }​
+
+
+
+    // https://attacomsian.com/blog
+    // const isToday = (date) => {
+    //     const today = new Date()
+    //     return date.getDate() === today.getDate() &&
+    //         date.getMonth() === today.getMonth() &&
+    //         date.getFullYear() === today.getFullYear();
+    // };
+    // const date = new Date(2019, 7, 7);
+    // console.log(isToday(date)); // true
+    
+    // Date.prototype.isToday = function () {
+    //     const today = new Date()
+    //     return this.getDate() === today.getDate() &&
+    //     this.getMonth() === today.getMonth() &&
+    //     this.getFullYear() === today.getFullYear();
+    // };
+    
+    // const date = new Date(2019, 7, 7);
+    // console.log(date.isToday());
+
+    // function redDot(){
+    //     let lastWatering = document.getElementById("last-watered").value;
+    //     if lastWatering = 
+    // } 
