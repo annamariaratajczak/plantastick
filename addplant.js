@@ -1,3 +1,5 @@
+let waterDays = 5;
+let fertalizeWeeks = 3; 
 
 function createPhoto() {
 
@@ -147,6 +149,7 @@ function createSchedule() {
     spanfert.appendChild(plusfert);
     plusfert.textContent = "+";
     plusfert.setAttribute("id", "plus_F_button")
+ 
 
     let fertParagraph2 = document.createElement("p");
     fertDiv.appendChild(fertParagraph2);
@@ -249,20 +252,33 @@ function savePlantsLocalStorage() {
     window.location.replace("index.html");
 }
 
-let waterDays = 5; 
+
 function daystoWater() {
-    document.getElementById("plus_W_button").onclick = (waterDays++) ;
-    document.getElementById("minus_W_button").onclick = (waterDays - 1);
-    document.getElementById("noDays").textContent = waterDays;
+    document.getElementById("plus_W_button").onclick = function() {
+        let add = waterDays++;
+        document.getElementById("noDays").textContent = waterDays;
+        console.log(add);
+    return add
+    };
+    document.getElementById("minus_W_button").onclick = function () {
+        let minus = waterDays--;
+        document.getElementById("noDays").textContent = waterDays;
+        console.log(minus);
+        return minus
+    }
+    
     return waterDays;
 }
-let fertalizeWeeks = 3; 
+daystoWater();
+
 function weekstoFertalize() {
     document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
     document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
     document.getElementById("noDays").textContent = fertalizeWeeks;
     return fertalizeWeeks; 
 }
+
+
 // document.getElementById("nodays").innerHTML = function daystoWater()
 // document.getElementById("plus_W_button").onclick = daystoWater()
 // let defaultFertaliseDays = 0; 
