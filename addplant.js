@@ -258,25 +258,61 @@ function daystoWater() {
         let add = waterDays++;
         document.getElementById("noDays").textContent = waterDays;
         console.log(add);
+        if (waterDays >30){
+            document.getElementById("noDays").textContent = 30;
+            waterDays = 30; 
+        }
     return add
     };
     document.getElementById("minus_W_button").onclick = function () {
         let minus = waterDays--;
         document.getElementById("noDays").textContent = waterDays;
         console.log(minus);
+        if (waterDays <2){
+            document.getElementById("noDays").textContent = 1;
+            waterDays = 1; 
+        }
         return minus
     }
     
     return waterDays;
 }
-daystoWater();
 
 function weekstoFertalize() {
-    document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
-    document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
-    document.getElementById("noDays").textContent = fertalizeWeeks;
-    return fertalizeWeeks; 
+    document.getElementById("plus_F_button").onclick = function() {
+        let add = fertalizeWeeks++;
+        document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
+        console.log(add);
+        if (fertalizeWeeks >54){
+            document.getElementById("noOfWeeks").textContent = 54;
+            fertalizeWeeks = 54; 
+        }
+    return add
+    };
+    document.getElementById("minus_F_button").onclick = function () {
+        let minus = fertalizeWeeks--;
+        document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
+        console.log(minus);
+        if (fertalizeWeeks <2){
+            document.getElementById("noOfWeeks").textContent = 1;
+            fertalizeWeeks = 1; 
+        }
+        return minus
+        
+    }
+
+    return fertalizeWeeks;
 }
+daystoWater() 
+weekstoFertalize()
+// daystoWater();
+
+// function weekstoFertalize() {
+//     document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
+//     document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
+//     document.getElementById("noDays").textContent = fertalizeWeeks;
+//     return fertalizeWeeks; 
+// }
 
 
 // document.getElementById("nodays").innerHTML = function daystoWater()
