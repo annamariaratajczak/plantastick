@@ -8,7 +8,9 @@ for (plant of myPlants) {
     
     if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
 
-
+        let redBadge = document.getElementById("redBadge");
+        console.log(redBadge )
+        redBadge.classList.remove("hideBadge");
         plantItem(plant, urlIndex);
     }
 

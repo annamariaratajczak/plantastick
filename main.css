@@ -219,3 +219,25 @@ width: auto;
     z-index: -1;
 }
 
+
+
+.notification {
+  color: white;
+  padding: 16px 16px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.hideBadge{
+  display: none;
+}
+.badge {
+  position: absolute;
+  top:14px;
+  right:40px ;
+  padding: 8px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
