@@ -1,16 +1,20 @@
 let urlIndex = 0;
+function redDot(){
+    let redBadge = document.getElementById("redBadge");
+    console.log(redBadge )
+    redBadge.classList.remove("hideBadge");
+    return redBadge
+}
 
 for (plant of myPlants) {
 
     var isTodayWater = nextAction(plant.lastWatering, plant.wateringSchedule, "day");
     var isTodayFert = nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week");
 
-    
+
     if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
 
-        let redBadge = document.getElementById("redBadge");
-        console.log(redBadge )
-        redBadge.classList.remove("hideBadge");
+    redDot();
         plantItem(plant, urlIndex);
     }
 

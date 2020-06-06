@@ -1,5 +1,5 @@
 let myPlants = [
-/*  {
+  /*  {
     name: "Dracaena dracena",
     img: "img/plant1.jpg",
     wateringSchedule: 7,
@@ -17,24 +17,26 @@ let myPlants = [
     lastFertilizing: moment("2020-05-03 21:30:25").valueOf(),
     notes: "",
   }*/
-]
-
+];
+function redDot() {
+  let redBadge = document.getElementById("redBadge");
+  console.log(redBadge);
+  redBadge.classList.remove("hideBadge");
+  return redBadge;
+}
+// redDot();
 
 function displayPlaceHolderText(notes) {
-  console.log(notes)
+  console.log(notes);
   if (notes == "" || typeof notes === "undefined") {
-    console.log(notes)
-    return notes = "Click on Edit to add a note.";
+    console.log(notes);
+    return (notes = "Click on Edit to add a note.");
   } else {
     return notes;
   }
 }
 
-
-
-
 function nextAction(last, schedule, unit) {
-
   //var x = new moment()
   //var y = new moment()
   //var duration = moment.duration(x.diff(y))
@@ -45,27 +47,20 @@ function nextAction(last, schedule, unit) {
   var difference = moment.duration(nextDate.diff(today));
   var days = difference.as("days");
   console.log(days);
-
   if (days <= -1) {
-    return "due " + Math.abs(Math.round(days)) + " days"
+    return "due " + Math.abs(Math.round(days)) + " days";
   }
-
   if (days < 1) {
-    return "today"
+    return "today";
   } else {
     return "in " + Math.round(days) + " days";
   }
-
 }
-
 function dateFormat(date) {
-
   let changeFormat = moment(date);
 
-  return changeFormat.format('DD-MM-YYYY')
-
+  return changeFormat.format("DD-MM-YYYY");
 }
-
 
 function loadPlants() {
   let savedPlantsAsJsonString = localStorage.getItem("myPlant");
@@ -76,3 +71,24 @@ function loadPlants() {
 
 loadPlants();
 
+for (plant of myPlants) {
+  var isTodayWater = nextAction(
+    plant.lastWatering,
+    plant.wateringSchedule,
+    "day"
+  );
+  var isTodayFert = nextAction(
+    plant.lastFertilizing,
+    plant.fertilizingSchedule,
+    "week"
+  );
+
+  if (
+    isTodayWater == "today" ||
+    isTodayFert == "today" ||
+    isTodayWater.includes("due") ||
+    isTodayFert.includes("due")
+  ) {
+    redDot();
+  }
+}

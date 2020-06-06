@@ -219,8 +219,6 @@ width: auto;
     z-index: -1;
 }
 
-
-
 .notification {
   color: white;
   padding: 16px 16px;
@@ -232,7 +230,7 @@ width: auto;
 .hideBadge{
   display: none;
 }
-.badge {
+.redBadge {
   position: absolute;
   top:14px;
   right:40px ;
