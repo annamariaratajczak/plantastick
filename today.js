@@ -5,9 +5,10 @@ for (plant of myPlants) {
     var isTodayWater = nextAction(plant.lastWatering, plant.wateringSchedule, "day");
     var isTodayFert = nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week");
 
-    console.log(isTodayWater);
-    console.log(isTodayFert);
+    
     if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
+
+
         plantItem(plant, urlIndex);
     }
 
@@ -30,6 +31,36 @@ function plantItem(plant, urlIndex) {
     itemLink.classList.add("navigate-right");
     itemLink.setAttribute("data-ignore", "push");
     itemLink.href = "plant.html?plant=" + urlIndex;
+    let waterButtonSpan = document.createElement("span")
+    item.appendChild(waterButtonSpan);
+
+    let buttons = document.createElement("li");
+    list.appendChild(buttons);
+    let waterDone = document.createElement("button");
+    buttons.appendChild(waterDone);
+    waterDone.setAttribute("class", "waterDone");
+
+    
+    waterDone.onclick = function () {
+        var button = document.getElementsByClassName("waterDone");
+        for (plant of button) {
+            button[plant].disabled = true;
+        }
+            
+            
+           
+    }
+    waterDone.textContent = "Mark as watered";
+
+
+    let fertilizingDone = document.createElement("button");
+    buttons.appendChild(fertilizingDone);
+    fertilizingDone.setAttribute("id", "fertilizingDone");
+    fertilizingDone.onclick = function () {
+        document.getElementById("fertilizingDone").disabled = true;
+    }
+    fertilizingDone.textContent = "Mark as fertilized";
+   
 
     let itemImg = document.createElement("img");
     itemLink.appendChild(itemImg);

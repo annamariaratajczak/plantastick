@@ -274,7 +274,6 @@ function daystoWater() {
         }
         return minus
     }
-    
     return waterDays;
 }
 
