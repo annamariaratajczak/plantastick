@@ -295,9 +295,6 @@ function weekstoFertalize() {
     //     let waterDays = 5; 
     //     let waterDays =+ 1;
     //  }​
-
-
-
     // https://attacomsian.com/blog
     // const isToday = (date) => {
     //     const today = new Date()
