@@ -266,7 +266,6 @@ function daystoWater() {
         console.log(minus);
         return minus
     }
-    
     return waterDays;
 }
 daystoWater();
