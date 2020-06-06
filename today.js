@@ -42,29 +42,33 @@ function plantItem(plant, urlIndex) {
 
     let buttons = document.createElement("li");
     list.appendChild(buttons);
+    
     let waterDone = document.createElement("button");
     buttons.appendChild(waterDone);
     waterDone.setAttribute("class", "waterDone");
 
     
-    waterDone.onclick = function () {
-        var button = document.getElementsByClassName("waterDone");
-        for (plant of button) {
-            button[plant].disabled = true;
-        }
-            
-            
-           
+    waterDone.onclick = function() {
+        waterDone.disabled = true;
+
+        let now = moment();
+        let nowFormat = now.format("DD-MM-YYYY");
+        console.log("now is" + nowFormat); 
+        plant.lastWatering = nowFormat;
+        savePlantsLocalStorage();    
     }
+            
     waterDone.textContent = "Mark as watered";
 
 
     let fertilizingDone = document.createElement("button");
     buttons.appendChild(fertilizingDone);
-    fertilizingDone.setAttribute("id", "fertilizingDone");
+    
+    
     fertilizingDone.onclick = function () {
-        document.getElementById("fertilizingDone").disabled = true;
-    }
+        fertilizingDone.disabled = true;
+  }
+
     fertilizingDone.textContent = "Mark as fertilized";
    
 
@@ -97,7 +101,10 @@ function plantItem(plant, urlIndex) {
         waterSpan.appendChild(wText);
         const breake = document.createElement('br');
         waterSpan.appendChild(breake);
-    } 
+
+    } else {
+        waterDone.disabled = true;
+    }
     
 
 
@@ -110,7 +117,13 @@ function plantItem(plant, urlIndex) {
         iconFert.setAttribute("class", "fas fa-prescription-bottle");
         const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
         fertSpan.appendChild(fText);
-    }
+        
+    
+    } else {
+            fertilizingDone.disabled = true;
+        }
+
+    
 }
 
 

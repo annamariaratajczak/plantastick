@@ -92,3 +92,12 @@ for (plant of myPlants) {
     redDot();
   }
 }
+
+function savePlantsLocalStorage() {
+
+  console.log(myPlants);
+  let plantsAsJsonString = JSON.stringify(myPlants);
+  console.log(plantsAsJsonString);
+  localStorage.setItem("myPlant", plantsAsJsonString);
+
+}

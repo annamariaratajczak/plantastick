@@ -242,15 +242,9 @@ function addPlant() {
     myPlants.push(newPlant);
     console.log(myPlants);
     savePlantsLocalStorage()
-}
-function savePlantsLocalStorage() {
-
-    console.log(myPlants);
-    let plantsAsJsonString = JSON.stringify(myPlants);
-    console.log(plantsAsJsonString);
-    localStorage.setItem("myPlant", plantsAsJsonString);
     window.location.replace("index.html");
 }
+
 
 
 function daystoWater() {
@@ -304,7 +298,7 @@ function weekstoFertalize() {
 }
 daystoWater() 
 weekstoFertalize()
-// daystoWater();
+
 
 // function weekstoFertalize() {
 //     document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
