@@ -238,9 +238,9 @@ function addPlant() {
         notes: notes,
     };
 
-    console.log(newPlant);
+    
     myPlants.push(newPlant);
-    console.log(myPlants);
+ 
     savePlantsLocalStorage()
     window.location.replace("index.html");
 }

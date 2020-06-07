@@ -67,6 +67,11 @@ function plantItem(plant, urlIndex) {
     
     fertilizingDone.onclick = function () {
         fertilizingDone.disabled = true;
+        let now = moment();
+        let nowFormat = now.format("DD-MM-YYYY");
+        console.log("now is" + nowFormat);
+        plant.lastFertilizing = nowFormat;
+        savePlantsLocalStorage(); 
   }
 
     fertilizingDone.textContent = "Mark as fertilized";
