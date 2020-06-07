@@ -115,6 +115,26 @@ function createSchedule() {
     let lastWaterInput = document.createElement("input");
     lastWater.appendChild(lastWaterInput);
     lastWaterInput.setAttribute("type", "date");
+
+    function maxDate() {
+        //https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
+        var today = new Date();
+        console.log(today);
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        return today
+      
+        
+    }
+    lastWaterInput.setAttribute("max", maxDate());
     lastWaterInput.setAttribute("id", "last-watered");
     lastWaterInput.setAttribute("name", "last-watered");
 
@@ -170,6 +190,7 @@ function createSchedule() {
     let lastFertInput = document.createElement("input");
     lastFert.appendChild(lastFertInput);
     lastFertInput.setAttribute("type", "date");
+    lastFertInput.setAttribute("max", maxDate());
     lastFertInput.setAttribute("id", "last-fert");
     lastFertInput.setAttribute("name", "last-fert");
 

@@ -178,8 +178,6 @@ function deletePlant() {
          console.log(myPlants);
          savePlantsLocalStorage()
          window.location.replace("index.html");
-        } else {
-            
         }
     
 }
