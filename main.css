@@ -43,6 +43,25 @@ font-size: 30px;
   right: 0;
  }
 
+ .content a {
+  display: flex;
+  justify-content: flex-end;
+ }
+
+ #addButton{
+   height: 60px;
+     padding: 0px;
+ }
+
+.addButton {
+    padding: 30px 30px 30px 30px;
+    z-index: 5;
+    position: fixed;
+  bottom: 6%;
+  right: 0%;
+}
+
+
 .photo-button {
    padding:30px 40px 30px 30px;
    z-index: 5;

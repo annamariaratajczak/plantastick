@@ -168,5 +168,29 @@ content.appendChild(notes);
 
 
 
+function deletePlant() {
+  
+    var r = confirm("Would you like to delete your plant?");
+     if (r == true) {
+    //myPlants[plantUrl] plantUrl
+    //  const index = myPlants.indexOf({});
+    // myPlants.splice(index, plantUrl);
+    
+        //  myPlants = [];
+        //  myPlants = myPlants.filter(function (obj) {
+        //      return obj.field !== 'werwr';
+        //  });
 
+         for (var i = myPlants.length - 1; i >= 0; --i) {
+             if (myPlants[i].field == "werwr") {
+                 myArray.splice(i, 1);
+             }
+         }
+         
+ 
+        } else {
+            
+        }
+    
+}
 
