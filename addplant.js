@@ -10,6 +10,11 @@ function createPhoto() {
     img.setAttribute("src", "img/not-found.png");
     img.setAttribute("alt", "plant-photo");
     img.setAttribute("id", "photo");
+   let canvas = document.createElement("canvas");
+   div.appendChild(canvas);
+    canvas.setAttribute("id", "canvas");
+    canvas.setAttribute("width", "100%");
+//<canvas id="canvas" width=300 ></canvas >
 
     let inputButton = document.createElement("input");
     div.appendChild(inputButton);
@@ -27,9 +32,40 @@ function createPhoto() {
             var a = new FileReader();
             // convert to base64
             a.readAsDataURL(inputButton.files[0]);
-            a.onload = function () {
-                console.log(a.result)
+            console.log("test" + inputButton.files[0]);
+            a.onload = function() {
+               // img.src = a.result;
+                
+                
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+                var dataurl;
+               // const image = new Image(10, 10); // Using optional size for image
+                img.onload = drawMyImage; // Draw when image has loaded
+
+                // Load an image of intrinsic size 300x227 in CSS pixels
                 img.src = a.result;
+
+                function drawMyImage() {
+                    // Use the intrinsic size of image in CSS pixels for the canvas element
+                   // canvas.width = canvas.width = canvas.width * 0.5;
+
+                    canvas.height = img.height;
+                    canvas.width = img.width;
+
+                    // Will draw the image as 300x227, ignoring the custom size of 60x45
+                    // given in the constructor
+                    ctx.drawImage(this, 0, 0);
+
+                    // To use the custom size we'll have to specify the scale parameters 
+                    // using the element's width and height properties - lets draw one 
+                    // on top in the corner:
+                    ctx.drawImage(this, 0, 0, this.width, this.height);
+                    dataurl = canvas.toDataURL("image/");
+                    document.getElementById('photo').src = dataurl;
+                } savePlantsLocalStorage()
+               // localStorage.setItem(plant.img, dataurl);
+                
             };
 
         }
@@ -101,7 +137,7 @@ function createSchedule() {
 
     let waterParagraph2 = document.createElement("p");
     waterDiv.appendChild(waterParagraph2);
-    waterParagraph2.textContent = "day";
+    waterParagraph2.textContent = "days";
 
     const lastWater = document.createElement('div');
     scheduleDiv.appendChild(lastWater);
@@ -173,9 +209,7 @@ function createSchedule() {
 
     let fertParagraph2 = document.createElement("p");
     fertDiv.appendChild(fertParagraph2);
-    fertParagraph2.textContent = "week";
-
-
+    fertParagraph2.textContent = "weeks";
 
 
     const lastFert = document.createElement('div');
@@ -321,52 +355,3 @@ daystoWater()
 weekstoFertalize()
 
 
-// function weekstoFertalize() {
-//     document.getElementById("plus_F_button").onclick = (fertalizeWeeks++) ;
-//     document.getElementById("minus_F_button").onclick = (fertalizeWeeks - 1);
-//     document.getElementById("noDays").textContent = fertalizeWeeks;
-//     return fertalizeWeeks; 
-// }
-
-
-// document.getElementById("nodays").innerHTML = function daystoWater()
-// document.getElementById("plus_W_button").onclick = daystoWater()
-// let defaultFertaliseDays = 0; 
-// function daystoWater (){
-//     document.getElementById('plusbutton').onclick = (defaultWaterDays++) ;
-//     document.getElementById("minus_button").onclick = (defaultWaterDays - 1);
-//     noOfWeeks.innerHTML = defaultWaterDays;
-// }
-// document.getElementById("save-button").addEventListener("click", addPlantName);
-// let plantx = document.getElementById("save-button");
-// plantx.addEventListener("click", addPlant);
-
-
-    // document.getElementById("no-Days").onclick = function Addnumber() {
-    //     let waterDays = 5; 
-    //     let waterDays =+ 1;
-    //  }​
-    // https://attacomsian.com/blog
-    // const isToday = (date) => {
-    //     const today = new Date()
-    //     return date.getDate() === today.getDate() &&
-    //         date.getMonth() === today.getMonth() &&
-    //         date.getFullYear() === today.getFullYear();
-    // };
-    // const date = new Date(2019, 7, 7);
-    // console.log(isToday(date)); // true
-    
-    // Date.prototype.isToday = function () {
-    //     const today = new Date()
-    //     return this.getDate() === today.getDate() &&
-    //     this.getMonth() === today.getMonth() &&
-    //     this.getFullYear() === today.getFullYear();
-    // };
-    
-    // const date = new Date(2019, 7, 7);
-    // console.log(date.isToday());
-
-    // function redDot(){
-    //     let lastWatering = document.getElementById("last-watered").value;
-    //     if lastWatering = 
-    // } 

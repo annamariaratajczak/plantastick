@@ -258,3 +258,6 @@ width: auto;
   background: red;
   color: white;
 }
+#canvas {
+  position: absolute;
+}
