@@ -1,11 +1,4 @@
-const queryString = window.location.search;
-console.log(queryString);
-//plant.html?plant=0
-
-const urlParams = new URLSearchParams(queryString);
-
-const plantUrl = urlParams.get('plant')
-console.log(plantUrl);
+let plantUrl = getPlantIndex();
 
 
 
@@ -145,10 +138,23 @@ function createNotes(plant) {
 
     return div
 }
+function deletePlant() {
 
+    var r = confirm("Would you like to delete your plant?");
+    if (r == true) {
+
+        myPlants.splice(plantUrl, 1);
+        console.log(plantUrl);
+        console.log(myPlants);
+        savePlantsLocalStorage()
+        window.location.replace("index.html");
+    }
+
+}
 
 let content = document.getElementById("content");
-
+let editPage = document.getElementById("addButton");
+editPage.setAttribute("href", "addplant.html?plant=" + plantUrl); 
 //function createPhoto
 let photo = createPhoto(myPlants[plantUrl]);
 content.appendChild(photo);
@@ -168,17 +174,5 @@ content.appendChild(notes);
 
 
 
-function deletePlant() {
-  
-    var r = confirm("Would you like to delete your plant?");
-     if (r == true) {
-    
-    myPlants.splice(plantUrl, 1);
-         console.log(plantUrl);    
-         console.log(myPlants);
-         savePlantsLocalStorage()
-         window.location.replace("index.html");
-        }
-    
-}
+
 

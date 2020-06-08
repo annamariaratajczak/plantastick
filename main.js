@@ -101,3 +101,15 @@ function savePlantsLocalStorage() {
   localStorage.setItem("myPlant", plantsAsJsonString);
 
 }
+
+function getPlantIndex() {
+const queryString = window.location.search;
+console.log(queryString);
+//plant.html?plant=0
+
+const urlParams = new URLSearchParams(queryString);
+
+const plantUrl = urlParams.get('plant')
+  return plantUrl;
+  
+}

@@ -1,13 +1,21 @@
 let waterDays = 5;
 let fertalizeWeeks = 3;
 
-function createPhoto() {
+function createPhoto(plant) {
 
+    console.log(plant);
     let div = document.createElement("div");
     let img = document.createElement("img");
     div.appendChild(img);
     img.classList.add("photo");
-    img.setAttribute("src", "img/not-found.png");
+    //to edit the content of the page
+    if (plant == null) {
+    
+        img.setAttribute("src", "img/not-found.png");
+    } else {
+        img.setAttribute("src", plant.img);
+    }
+        
     img.setAttribute("alt", "plant-photo");
     img.setAttribute("id", "photo");
  
@@ -76,7 +84,7 @@ function createPhoto() {
     return div
 }
 
-function createName() {
+function createName(plant) {
 
     let div = document.createElement("div");
     div.classList.add("plant-name-div");
@@ -86,6 +94,14 @@ function createName() {
     label.textContent = "Plant name: ";
     let input = document.createElement("input");
     div.appendChild(input);
+
+    if (plant == null) {
+
+        input.value = "";
+    } else {
+        input.value = plant.name;
+    } 
+
     input.setAttribute("type", "text");
     input.setAttribute("id", "plant-name")
     input.setAttribute("name", "plant-name");
@@ -94,7 +110,7 @@ function createName() {
 }
 
 
-function createSchedule() {
+function createSchedule(plant) {
 
     let scheduleDiv = document.createElement("div");
     scheduleDiv.classList.add("schedule");
@@ -122,7 +138,15 @@ function createSchedule() {
     const noDays = document.createElement('h2');
     noDays.setAttribute("id", "noDays");
     spanWater.appendChild(noDays);
-    noDays.textContent = "5";
+    
+
+    if (plant == null) {
+
+        noDays.textContent = waterDays;
+    } else {
+        noDays.textContent = plant.wateringSchedule;
+    } 
+
 
     const plusWater = document.createElement('button');
     spanWater.appendChild(plusWater);
@@ -145,6 +169,11 @@ function createSchedule() {
     let lastWaterInput = document.createElement("input");
     lastWater.appendChild(lastWaterInput);
     lastWaterInput.setAttribute("type", "date");
+
+    if (plant != null) {
+
+        lastWaterInput.value = plant.lastWatering;
+    }
 
     function maxDate() {
         //https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
@@ -193,7 +222,14 @@ function createSchedule() {
     const noOfWeeks = document.createElement('h2');
     spanfert.appendChild(noOfWeeks);
     noOfWeeks.setAttribute("id", "noOfWeeks");
-    noOfWeeks.textContent = "3";
+
+    if (plant == null) {
+
+        noOfWeeks.textContent = fertalizeWeeks;
+    } else {
+        noOfWeeks.textContent = plant.fertilizingSchedule;
+    } 
+    
 
     const plusfert = document.createElement('button');
     spanfert.appendChild(plusfert);
@@ -221,12 +257,16 @@ function createSchedule() {
     lastFertInput.setAttribute("max", maxDate());
     lastFertInput.setAttribute("id", "last-fert");
     lastFertInput.setAttribute("name", "last-fert");
+    if (plant != null) {
+
+        lastFertInput.value = plant.lastFertilizing;
+    }
 
     return scheduleDiv
 
 }
 
-function createNotes() {
+function createNotes(plant) {
 
     const div = document.createElement('div');
     div.classList.add("plant-notes-div");
@@ -242,31 +282,13 @@ function createNotes() {
     input.setAttribute("id", "plant-notes");
     input.setAttribute("name", "plant-notes");
 
+    if (plant != null) {
+
+        input.value = plant.notes;
+    }
+    
     return div
 }
-
-
-let content = document.getElementById("content");
-
-//function createPhoto
-let photo = createPhoto();
-content.appendChild(photo);
-
-//function createName 
-let name = createName();
-content.appendChild(name);
-
-
-//function create schedule
-let schedule = createSchedule();
-content.appendChild(schedule);
-
-//function create notes
-let notes = createNotes();
-content.appendChild(notes);
-
-//zahra----------------------
-
 
 function addPlant() {
     let img = document.getElementById("photo");
@@ -287,8 +309,13 @@ function addPlant() {
         notes: notes,
     };
 
+    let plantUrl = getPlantIndex();
 
-    myPlants.push(newPlant);
+    if (plantUrl == null) {
+        myPlants.push(newPlant);
+    } else {
+        myPlants[plantUrl] = newPlant;
+    }
 
     savePlantsLocalStorage()
     window.location.replace("index.html");
@@ -296,7 +323,11 @@ function addPlant() {
 
 
 
-function daystoWater() {
+function daystoWater(plant) {
+
+    if (plant != null) {
+        waterDays = plant.wateringSchedule;
+    }
     document.getElementById("plus_W_button").onclick = function () {
         let add = waterDays++;
         document.getElementById("noDays").textContent = waterDays;
@@ -307,6 +338,7 @@ function daystoWater() {
         }
         return add
     };
+
     document.getElementById("minus_W_button").onclick = function () {
         let minus = waterDays--;
         document.getElementById("noDays").textContent = waterDays;
@@ -320,7 +352,10 @@ function daystoWater() {
     return waterDays;
 }
 
-function weekstoFertalize() {
+function weekstoFertalize(plant) {
+    if (plant != null) {
+        fertalizeWeeks = plant.fertilizingSchedule;
+    }
     document.getElementById("plus_F_button").onclick = function () {
         let add = fertalizeWeeks++;
         document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
@@ -345,7 +380,36 @@ function weekstoFertalize() {
 
     return fertalizeWeeks;
 }
-daystoWater()
-weekstoFertalize()
+
+let plantUrl = getPlantIndex();
+let pageHeadline = document.getElementById("pageHeader");
+if (plantUrl != null) {
+    pageHeadline.textContent = "Edit plant";
+} else {
+    pageHeadline.textContent = "Add plant";
+}
+
+console.log(plantUrl)
+let content = document.getElementById("content");
+
+//function createPhoto
+let photo = createPhoto(myPlants[plantUrl]);
+content.appendChild(photo);
+
+//function createName 
+let name = createName(myPlants[plantUrl]);
+content.appendChild(name);
+
+
+//function create schedule
+let schedule = createSchedule(myPlants[plantUrl]);
+content.appendChild(schedule);
+
+//function create notes
+let notes = createNotes(myPlants[plantUrl]);
+content.appendChild(notes);
+
+daystoWater(myPlants[plantUrl]);
+weekstoFertalize(myPlants[plantUrl]);
 
 
