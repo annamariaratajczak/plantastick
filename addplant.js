@@ -1,5 +1,5 @@
 let waterDays = 5;
-let fertalizeWeeks = 3; 
+let fertalizeWeeks = 3;
 
 function createPhoto() {
 
@@ -10,11 +10,7 @@ function createPhoto() {
     img.setAttribute("src", "img/not-found.png");
     img.setAttribute("alt", "plant-photo");
     img.setAttribute("id", "photo");
-   let canvas = document.createElement("canvas");
-   div.appendChild(canvas);
-    canvas.setAttribute("id", "canvas");
-    canvas.setAttribute("width", "100%");
-//<canvas id="canvas" width=300 ></canvas >
+ 
 
     let inputButton = document.createElement("input");
     div.appendChild(inputButton);
@@ -27,45 +23,43 @@ function createPhoto() {
     //www.youtube.com/watch?v=dbrez37HlJM
     inputButton.addEventListener("change", (ev) => {
         if (inputButton.files[0].type.indexOf("image/") > -1) {
-
             //https://javascript.info/blob
-            var a = new FileReader();
+            var reader = new FileReader();
             // convert to base64
-            a.readAsDataURL(inputButton.files[0]);
-            console.log("test" + inputButton.files[0]);
-            a.onload = function() {
-               // img.src = a.result;
-                
-                
-                const canvas = document.getElementById('canvas');
-                const ctx = canvas.getContext('2d');
-                var dataurl;
-               // const image = new Image(10, 10); // Using optional size for image
-                img.onload = drawMyImage; // Draw when image has loaded
+            reader.readAsDataURL(inputButton.files[0]);
 
-                // Load an image of intrinsic size 300x227 in CSS pixels
-                img.src = a.result;
 
-                function drawMyImage() {
-                    // Use the intrinsic size of image in CSS pixels for the canvas element
-                   // canvas.width = canvas.width = canvas.width * 0.5;
+            reader.onload = function (e) {
+                var img2 = document.createElement("img");
+                img2.src = e.target.result;
+                // https://stackoverflow.com/questions/31853770/save-image-to-localstorage-html-after-resize-and-show-same/31854594
 
-                    canvas.height = img.height;
-                    canvas.width = img.width;
+                img2.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img2, 0, 0);
 
-                    // Will draw the image as 300x227, ignoring the custom size of 60x45
-                    // given in the constructor
-                    ctx.drawImage(this, 0, 0);
 
-                    // To use the custom size we'll have to specify the scale parameters 
-                    // using the element's width and height properties - lets draw one 
-                    // on top in the corner:
-                    ctx.drawImage(this, 0, 0, this.width, this.height);
-                    dataurl = canvas.toDataURL("image/");
-                    document.getElementById('photo').src = dataurl;
-                } savePlantsLocalStorage()
-               // localStorage.setItem(plant.img, dataurl);
-                
+                    var MAX_WIDTH = 500;
+                    var width = img2.width;
+                    var height = img2.height;
+
+                    height = height * (MAX_WIDTH / width);
+                    width = MAX_WIDTH;
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    ctx.drawImage(img2, 0, 0, width, height);
+
+                    var photo = canvas.toDataURL("image/jpeg");
+
+                    document.getElementById('photo').src = photo;
+                }
+
+
+
+
             };
 
         }
@@ -167,8 +161,8 @@ function createSchedule() {
         }
         today = yyyy + '-' + mm + '-' + dd;
         return today
-      
-        
+
+
     }
     lastWaterInput.setAttribute("max", maxDate());
     lastWaterInput.setAttribute("id", "last-watered");
@@ -205,7 +199,7 @@ function createSchedule() {
     spanfert.appendChild(plusfert);
     plusfert.textContent = "+";
     plusfert.setAttribute("id", "plus_F_button")
- 
+
 
     let fertParagraph2 = document.createElement("p");
     fertDiv.appendChild(fertParagraph2);
@@ -293,9 +287,9 @@ function addPlant() {
         notes: notes,
     };
 
-    
+
     myPlants.push(newPlant);
- 
+
     savePlantsLocalStorage()
     window.location.replace("index.html");
 }
@@ -303,23 +297,23 @@ function addPlant() {
 
 
 function daystoWater() {
-    document.getElementById("plus_W_button").onclick = function() {
+    document.getElementById("plus_W_button").onclick = function () {
         let add = waterDays++;
         document.getElementById("noDays").textContent = waterDays;
         console.log(add);
-        if (waterDays >30){
+        if (waterDays > 30) {
             document.getElementById("noDays").textContent = 30;
-            waterDays = 30; 
+            waterDays = 30;
         }
-    return add
+        return add
     };
     document.getElementById("minus_W_button").onclick = function () {
         let minus = waterDays--;
         document.getElementById("noDays").textContent = waterDays;
         console.log(minus);
-        if (waterDays <2){
+        if (waterDays < 2) {
             document.getElementById("noDays").textContent = 1;
-            waterDays = 1; 
+            waterDays = 1;
         }
         return minus
     }
@@ -327,31 +321,31 @@ function daystoWater() {
 }
 
 function weekstoFertalize() {
-    document.getElementById("plus_F_button").onclick = function() {
+    document.getElementById("plus_F_button").onclick = function () {
         let add = fertalizeWeeks++;
         document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
         console.log(add);
-        if (fertalizeWeeks >54){
+        if (fertalizeWeeks > 54) {
             document.getElementById("noOfWeeks").textContent = 54;
-            fertalizeWeeks = 54; 
+            fertalizeWeeks = 54;
         }
-    return add
+        return add
     };
     document.getElementById("minus_F_button").onclick = function () {
         let minus = fertalizeWeeks--;
         document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
         console.log(minus);
-        if (fertalizeWeeks <2){
+        if (fertalizeWeeks < 2) {
             document.getElementById("noOfWeeks").textContent = 1;
-            fertalizeWeeks = 1; 
+            fertalizeWeeks = 1;
         }
         return minus
-        
+
     }
 
     return fertalizeWeeks;
 }
-daystoWater() 
+daystoWater()
 weekstoFertalize()
 
 
