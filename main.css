@@ -1,5 +1,5 @@
 body {
-  font-family: TenaliRamakrishna-Regular !important;
+  font-family: BalooThambi2-Regular !important;
   
 
 }
@@ -10,12 +10,16 @@ body {
 }
 
 .content {
- 
-    background-image: url("img/BigBGwithleaves.svg") !important;
-    background-size: initial;
-    
 
+}
 
+.bgwhiteleaves {
+  background-image: url("img/BIGbgwhiteleaves.svg") !important;
+  background-size: initial;
+}
+.bggreenleaves {
+  background-image: url("img/BigBGwithleaves.svg") !important;
+  background-size: initial;
 }
 .content img {
   
@@ -319,4 +323,8 @@ width: auto;
 
 .fa-times {
   font-size: 16px;
+}
+
+.bar-nav {
+  background-color: #BCD5D5;
 }
