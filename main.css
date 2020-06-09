@@ -199,6 +199,13 @@ margin-top: 0 !important;
 .plant-details .save-button {
     margin-top: 50px;
     padding: 10px;
+    margin-left: 32px;
+    
+}
+.saveBtn {
+  margin-right: 12px !important;
+  margin-top: 7px !important;
+  
 }
 
 
