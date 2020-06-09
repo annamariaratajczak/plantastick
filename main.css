@@ -1,12 +1,14 @@
 body {
-  font-family: BalooThambi2-Regular !important;
+  font-family: BalooThambi2 !important;
   
 
 }
 
 @font-face {
-  font-family: Renner;
-  src: url(../fonts/BalooThambi2-Regular.ttf);
+  font-family: BalooThambi2;
+  src: url(./fonts/Baloo_Thambi_2/BalooThambi2-Regular.ttf);
+  font-weight: normal;
+  font-size: normal;
 }
 
 .content {
@@ -261,7 +263,6 @@ width: auto;
 
 .notification {
   color: white;
-  padding: 16px 16px;
   position: relative;
   display: inline-block;
   border-radius: 2px;
