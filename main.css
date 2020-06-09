@@ -275,7 +275,7 @@ width: auto;
   position: relative;
     top: -13px;
     right: 10px;
-    height: 21px;
+    height: 16px;
 }
 
 #canvas {
@@ -339,5 +339,9 @@ width: auto;
 
 .bar-nav {
   background-color: #BCD5D5;
+  height: 58px;
+}
+.title{
+  padding: 6px;
 }
 
