@@ -45,7 +45,7 @@ function plantItem(plant, urlIndex) {
     const iconWater = document.createElement('img');
     waterSpan.appendChild(iconWater);
     iconWater.setAttribute("class", "careIcons");
-    iconWater.setAttribute("src", "img/waterdropicon.svg")
+    iconWater.setAttribute("src", "img/waterdropiconnew.svg")
     const wText = document.createTextNode(nextAction(plant.lastWatering, plant.wateringSchedule, "day"));
     waterSpan.appendChild(wText);
     const breake = document.createElement('br');
@@ -58,7 +58,7 @@ function plantItem(plant, urlIndex) {
 
     const iconFert = document.createElement('img');
     fertSpan.appendChild(iconFert);
-    iconFert.setAttribute("src", "img/fertaliseicon.svg");
+    iconFert.setAttribute("src", "img/fericonnew.svg");
     iconFert.setAttribute("class", "careIcons");
 
 
