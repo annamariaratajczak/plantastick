@@ -9,14 +9,11 @@ body {
   font-family: Renner;
   src: url(../fonts/TenaliRamakrishna-Regular.ttf);
 }
-.mainDiv {
-    max-width: 600pt;
-    height: 100%;
+.content {
+ 
     background-image: url("img/bgnum5.png") !important;
-    background-repeat: no-repeat;
-    background-size: cover;
-  width: 100%;
-  min-height: 100%;
+    background-repeat: round;
+    background-size: initial;
 
 
 }
@@ -70,7 +67,7 @@ font-size: 30px;
    width: 50px;
  }
 
-.addButton {
+#addButton {
     padding: 30px 30px 30px 30px;
     z-index: 5;
     position: fixed;
