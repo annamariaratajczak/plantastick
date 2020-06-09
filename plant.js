@@ -139,18 +139,42 @@ function createNotes(plant) {
     return div
 }
 function deletePlant() {
+    var modal1 = document.getElementById("myModal");
+      
+    modal1.style.display = "block";
 
-    var r = confirm("Would you like to delete your plant?");
-    if (r == true) {
+    return modal
 
-        myPlants.splice(plantUrl, 1);
-        console.log(plantUrl);
-        console.log(myPlants);
-        savePlantsLocalStorage()
-        window.location.replace("index.html");
-    }
+
+    //don't remove - the confirm default browser window
+    // var r = confirm("Would you like to delete your plant?");
+    // if (r == true) {
+
+    //     myPlants.splice(plantUrl, 1);
+    //     console.log(plantUrl);
+    //     console.log(myPlants);
+    //     savePlantsLocalStorage()
+    //     window.location.replace("index.html");
+    // }
 
 }
+
+function yesDelete() {
+    myPlants.splice(plantUrl, 1);
+    console.log(plantUrl);
+    console.log(myPlants);
+    savePlantsLocalStorage()
+    window.location.replace("index.html");
+ 
+}    
+
+function cancelDelete() {
+    var modal1 = document.getElementById("myModal");
+    modal1.style.display = "none";
+}
+
+
+
 
 let content = document.getElementById("content");
 let editPage = document.getElementById("addButton");

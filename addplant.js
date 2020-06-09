@@ -205,7 +205,7 @@ function createSchedule(plant) {
 
     let fertHeader = document.createElement("h3");
     fertDiv.appendChild(fertHeader);
-    fertHeader.textContent = "Fertilizer";
+    fertHeader.textContent = "FERTILIZER";
 
     let fertParagraph = document.createElement("p");
     fertDiv.appendChild(fertParagraph);

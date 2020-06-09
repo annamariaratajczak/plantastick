@@ -27,7 +27,7 @@
 
 
 <body>
-    <div class="mainDiv">
+    <div id="mainDiv" class="mainDiv">
         <!-- Make sure all your bars are the first things in your <body> -->
         <header class="bar bar-nav">
             <a  onclick="window.history.go(-1); return false;" class="btn btn-link btn-nav pull-left" data-ignore="push" href="index.html">
@@ -44,6 +44,17 @@
         
         <div id="content" class="content plant-details">
             
+
+            <div id="myModal" class="modal1">
+                <div class="modal-content">
+                  <button class="close" onclick=cancelDelete()><i class="fas fa-times"></i></button>
+                    <p>Would you like to delete this plant?</p>
+                    <span class="buttons"><button id=("cancelBtn") onclick=cancelDelete()>Cancel</button><button id="yesBtn" onclick=yesDelete()>Yes</button></span>
+                    
+                </div>
+
+
+
            <!--html for this part is created in JS-->
 
     <a  id="addButton" class="addButton" href="addplant.html?plant=" data-ignore="push"><img id="addButton" src="img/plusicon.svg"
@@ -51,7 +62,8 @@
     </div>
     <nav class="bar bar-tab">
         <a class="tab-item notification" href="today.html" data-ignore="push">
-            <i class="fas fa-clock "><span class="hideBadge redBadge" id="redBadge"></span></i>
+            <i class="fas fa-clock "><span class="hideBadge redBadge" id="redBadge"><img class="redBadge"
+                        src="img/red-icon-SVG.svg" alt="plus icon"></span></i>
         </a>
         <a class="tab-item" href="index.html" data-ignore="push">
             <i class="fas fa-seedling"></i>
