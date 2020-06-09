@@ -17,6 +17,10 @@ body {
   background-image: url("img/BIGbgwhiteleaves.svg") !important;
   background-size: initial;
 }
+.bgnoleaves {
+  background-image: url("img/BIGbgplain.svg") !important;
+  background-size: initial;
+}
 .bggreenleaves {
   background-image: url("img/BigBGwithleaves.svg") !important;
   background-size: initial;
