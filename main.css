@@ -1,7 +1,6 @@
 body {
   font-family: TenaliRamakrishna-Regular !important;
-  background-image: url("img/bgnum5.png") !important;
- z-index: 100; 
+  
 
 }
 
@@ -9,13 +8,18 @@ body {
   font-family: Renner;
   src: url(../fonts/BalooThambi2-Regular.ttf);
 }
+
 .content {
  
-    background-image: url("img/bgnum5.png") !important;
-    background-repeat: round;
+    background-image: url("img/BigBGwithleaves.svg") !important;
     background-size: initial;
+    
 
 
+}
+.content img {
+  
+  object-fit: cover;
 }
 
 .navBar {

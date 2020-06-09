@@ -11,7 +11,7 @@ function createPhoto(plant) {
     //to edit the content of the page
     if (plant == null) {
     
-        img.setAttribute("src", "img/not-found.png");
+        img.setAttribute("src", "img/placeholder2.svg");
     } else {
         img.setAttribute("src", plant.img);
     }

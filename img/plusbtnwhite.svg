@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>plusbtnwhite</title>
+    <desc>Created with Sketch.</desc>
+    <g id="plusbtnwhite" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M49.5,26.25 C49.5,13.41 39.09,3 26.25,3 C13.409,3 3,13.41 3,26.25 C3,39.091 13.409,49.5 26.25,49.5 C39.09,49.5 49.5,39.091 49.5,26.25" id="Fill-1" fill="#FEFEFE"></path>
+        <path d="M49.5,26.25 C49.5,13.41 39.09,3 26.25,3 C13.409,3 3,13.41 3,26.25 C3,39.091 13.409,49.5 26.25,49.5 C39.09,49.5 49.5,39.091 49.5,26.25 Z" id="Stroke-3" stroke="#002A02" stroke-width="3"></path>
+        <path d="M26.559,38 L26.441,38 C26.281,38 26.151,37.9042034 26.151,37.7862999 L26.151,14.2137001 C26.151,14.0957966 26.281,14 26.441,14 L26.559,14 C26.719,14 26.849,14.0957966 26.849,14.2137001 L26.849,37.7862999 C26.849,37.9042034 26.719,38 26.559,38 Z" id="Stroke-7" stroke="#002A02" stroke-width="2"></path>
+        <path d="M38,26.441 L38,26.559 C38,26.719 37.9042034,26.849 37.7862999,26.849 L14.2137001,26.849 C14.0957966,26.849 14,26.719 14,26.559 L14,26.441 C14,26.281 14.0957966,26.151 14.2137001,26.151 L37.7862999,26.151 C37.9042034,26.151 38,26.281 38,26.441 Z" id="Stroke-11" stroke="#002A02" stroke-width="2"></path>
+    </g>
+</svg>
