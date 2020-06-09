@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="32px" viewBox="0 0 23 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>waterdropicon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="waterdropicon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval-Copy" stroke="#002A02" fill="#002A02" cx="11.5" cy="21.5" r="9.5"></circle>
+        <polygon id="Path-164-Copy" stroke="#002A02" fill="#002A02" points="3.06262207 17.2011719 19.9482422 17.2011719 11.6009587 1"></polygon>
+        <ellipse id="Oval" fill="#FFFFFF" cx="11.5" cy="21" rx="7.5" ry="8"></ellipse>
+        <polygon id="Path-164" fill="#FFFFFF" points="5 17 18 17 11.5 4.81427002"></polygon>
+        <g id="Group" transform="translate(6.000000, 9.000000)" fill="#BCD5D5">
+            <ellipse id="Oval" cx="5.5" cy="12.22" rx="5.5" ry="5.78"></ellipse>
+            <polygon id="Path-164" points="0.737074908 9.37527699 10.2725758 9.37527699 5.50543213 -2.63788991e-13"></polygon>
+        </g>
+        <g id="Group-Copy" transform="translate(11.000000, 21.000000)" fill="#FFFFFF">
+            <circle id="Oval" cx="2" cy="2" r="2"></circle>
+        </g>
+    </g>
+</svg>

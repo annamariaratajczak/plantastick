@@ -81,6 +81,7 @@ function plantItem(plant, urlIndex) {
     itemLink.appendChild(itemImg);
     itemImg.classList.add("media-object");
     itemImg.classList.add("pull-left");
+    itemImg.classList.add("liPlantImg")
     itemImg.setAttribute("src", plant.img);
     itemImg.setAttribute("width", "150");
 
@@ -99,9 +100,11 @@ function plantItem(plant, urlIndex) {
         const waterSpan = document.createElement('span');
         itemParameters.appendChild(waterSpan);
 
-        const iconWater = document.createElement('i');
+        const iconWater = document.createElement('img');
+    
+        iconWater.setAttribute("class", "careIcons");
+        iconWater.setAttribute("src", "img/waterdropicon.svg")
         waterSpan.appendChild(iconWater);
-        iconWater.setAttribute("class", "fas fa-tint");
         const wText = document.createTextNode(nextAction(plant.lastWatering, plant.wateringSchedule, "day"));
         waterSpan.appendChild(wText);
         const breake = document.createElement('br');
@@ -117,11 +120,13 @@ function plantItem(plant, urlIndex) {
         const fertSpan = document.createElement('span');
         itemParameters.appendChild(fertSpan);
 
-        const iconFert = document.createElement('i');
+        const iconFert = document.createElement('img');
         fertSpan.appendChild(iconFert);
-        iconFert.setAttribute("class", "fas fa-prescription-bottle");
+        iconFert.setAttribute("src", "img/fertaliseicon.svg");
+        iconFert.setAttribute("class", "careIcons");
         const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
         fertSpan.appendChild(fText);
+      
         
     
     } else {

@@ -102,7 +102,7 @@ font-size: 30px;
   border:none;
 }
 
-.plant-list img {
+.liPlantImg {
     width: 150px !important;
  height:100px !important;
   object-fit: cover;
@@ -273,11 +273,18 @@ width: auto;
 }
 .redBadge {
   position: relative;
-  top:-2px;
-  right:9px ;
+    top: -13px;
+    right: 10px;
+    height: 21px;
 }
+
 #canvas {
   position: absolute;
+}
+
+.careIcons {
+  width: 37px;
+  margin-top: 5px;
 }
 
 .modal1 {
@@ -333,4 +340,4 @@ width: auto;
 .bar-nav {
   background-color: #BCD5D5;
 }
-#
+
