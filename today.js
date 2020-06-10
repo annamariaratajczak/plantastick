@@ -1,7 +1,6 @@
 let urlIndex = 0;
 function redDot(){
     let redBadge = document.getElementById("redBadge");
-    console.log(redBadge )
     redBadge.classList.remove("hideBadge");
     return redBadge
 }
@@ -45,9 +44,11 @@ function plantItem(plant, urlIndex) {
     
     let waterDone = document.createElement("button");
     buttons.appendChild(waterDone);
-    waterDone.setAttribute("class", "waterDone");
+    waterDone.setAttribute("class", "checkBtns");
+    waterDone.textContent = "Mark as watered";
+    waterDone.classList.add("class", "doneBtnsDisabled");
+    waterDone.classList.add("class", "doneBtnsActive");
 
-    
     waterDone.onclick = function() {
         waterDone.disabled = true;
 
@@ -56,14 +57,24 @@ function plantItem(plant, urlIndex) {
         console.log("now is" + nowFormat); 
         plant.lastWatering = nowFormat;
         savePlantsLocalStorage();    
+        
+        // if (waterDone.disabled = true) {
+        //     waterDone.classList.remove("doneBtnsActive")
+        // } else {
+        //     waterDone.classList.remove("doneBtnsDisabled")
+        // }
     }
-            
-    waterDone.textContent = "Mark as watered";
+    // function redDot() {
+    //     let redBadge = document.getElementById("redBadge");
+    //     redBadge.classList.remove("hideBadge");
+    //     return redBadge 
 
 
     let fertilizingDone = document.createElement("button");
     buttons.appendChild(fertilizingDone);
-    
+    fertilizingDone.setAttribute("class", "doneBtns-Activ");
+    fertilizingDone.setAttribute("class", "doneBtns-Disabled");
+    fertilizingDone.textContent = "Mark as fertilized";
     
     fertilizingDone.onclick = function () {
         fertilizingDone.disabled = true;

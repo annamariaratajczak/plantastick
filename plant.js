@@ -5,6 +5,7 @@ let plantUrl = getPlantIndex();
 function createPhoto(plant) {
 
     let div = document.createElement("div");
+    div.classList.add("round");
     let img = document.createElement("img");
     div.appendChild(img);
     img.classList.add("photo");
@@ -32,14 +33,13 @@ function createName(plant) {
     return div
 }
 
-function createSchedule(plant) {
+function createScheduleWater(plant) {
 
-    let scheduleDiv = document.createElement("div");
-    scheduleDiv.classList.add("schedule");
-    scheduleDiv.classList.add("profile-page")
+    // let scheduleDiv = document.createElement("div");
+    // scheduleDiv.classList.add("schedule");
+    // scheduleDiv.classList.add("profile-page")
 
     let waterDiv = document.createElement("div");
-    scheduleDiv.appendChild(waterDiv);
     waterDiv.classList.add("activity");
 
     let waterHeader = document.createElement("h3");
@@ -64,7 +64,7 @@ function createSchedule(plant) {
 
 
     const lastWater = document.createElement('div');
-    scheduleDiv.appendChild(lastWater);
+    waterDiv.appendChild(lastWater);
     lastWater.classList.add("input-field");
 
     lastWaterLabel = document.createElement("label");
@@ -76,10 +76,12 @@ function createSchedule(plant) {
     lastWater.appendChild(lastWaterDate);
     lastWaterDate.textContent = dateFormat(plant.lastWatering);
 
+    return waterDiv
+}
 
+    function createScheduleFertilized(plant) {
 
     let fertDiv = document.createElement("div");
-    scheduleDiv.appendChild(fertDiv);
     fertDiv.classList.add("activity");
 
     let fertHeader = document.createElement("h3");
@@ -102,11 +104,8 @@ function createSchedule(plant) {
     daysCountFert.appendChild(fertParagraph2);
     fertParagraph2.textContent = "weeks";
 
-
-
-
     const lastFert = document.createElement('div');
-    scheduleDiv.appendChild(lastFert);
+    fertDiv.appendChild(lastFert);
     lastFert.classList.add("input-field");
 
     lastFertLabel = document.createElement("label");
@@ -118,14 +117,14 @@ function createSchedule(plant) {
     lastFert.appendChild(lastFertDate);
     lastFertDate.textContent = dateFormat(plant.lastFertilizing);
 
-    return scheduleDiv
+    return fertDiv
 
 }
 
 function createNotes(plant) {
 
     const div = document.createElement('div');
-    div.classList.add("plant-notes-div");
+    div.classList.add("plant-notes-div-saved");
 
     const label = document.createElement('label');
     div.appendChild(label);
@@ -173,9 +172,6 @@ function cancelDelete() {
     modal1.style.display = "none";
 }
 
-
-
-
 let content = document.getElementById("content");
 let editPage = document.getElementById("addButton");
 editPage.setAttribute("href", "addplant.html?plant=" + plantUrl); 
@@ -189,8 +185,11 @@ content.appendChild(name);
 
 
 //function create schedule
-let schedule = createSchedule(myPlants[plantUrl]);
-content.appendChild(schedule);
+let scheduleWater = createScheduleWater(myPlants[plantUrl]);
+content.appendChild(scheduleWater);
+
+let scheduleFert = createScheduleFertilized(myPlants[plantUrl]);
+content.appendChild(scheduleFert);
 
 //function create notes
 let notes = createNotes(myPlants[plantUrl]);

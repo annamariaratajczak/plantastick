@@ -5,6 +5,7 @@ function createPhoto(plant) {
 
     console.log(plant);
     let div = document.createElement("div");
+    div.setAttribute("class", "round");
     let img = document.createElement("img");
     div.appendChild(img);
     img.classList.add("photo");
@@ -77,9 +78,11 @@ function createPhoto(plant) {
     let label = document.createElement("label");
     div.appendChild(label);
     label.setAttribute("for", "capture");
-    let i = document.createElement("i");
-    label.appendChild(i);
-    i.setAttribute("class", "fas fa-camera");
+
+    let camIcon = document.createElement("img");
+    label.appendChild(camIcon);
+    camIcon.setAttribute("class", "cameraIcon");
+    camIcon.setAttribute("src", "img/cameradarkgreen.svg");
 
     return div
 }
@@ -105,6 +108,8 @@ function createName(plant) {
     input.setAttribute("type", "text");
     input.setAttribute("id", "plant-name")
     input.setAttribute("name", "plant-name");
+    
+    input.classList.add("class", "inputStyle");
 
     return div
 }
@@ -169,6 +174,8 @@ function createSchedule(plant) {
     let lastWaterInput = document.createElement("input");
     lastWater.appendChild(lastWaterInput);
     lastWaterInput.setAttribute("type", "date");
+    lastWaterInput.classList.add("class", "inputStyle");
+    
 
     if (plant != null) {
 
@@ -245,6 +252,7 @@ function createSchedule(plant) {
     const lastFert = document.createElement('div');
     scheduleDiv.appendChild(lastFert);
     lastFert.classList.add("input-field");
+    
 
     lastFertLabel = document.createElement("label");
     lastFert.appendChild(lastFertLabel);
@@ -257,6 +265,7 @@ function createSchedule(plant) {
     lastFertInput.setAttribute("max", maxDate());
     lastFertInput.setAttribute("id", "last-fert");
     lastFertInput.setAttribute("name", "last-fert");
+    lastFertInput.classList.add("class", "inputStyle");
     if (plant != null) {
 
         lastFertInput.value = plant.lastFertilizing;
@@ -281,6 +290,7 @@ function createNotes(plant) {
     input.setAttribute("type", "text");
     input.setAttribute("id", "plant-notes");
     input.setAttribute("name", "plant-notes");
+    input.classList.add("class", "inputStyle");
 
     if (plant != null) {
 
