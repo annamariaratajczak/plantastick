@@ -185,28 +185,31 @@ margin-top: 0 !important;
     padding-right: 50px;
 }
 
+.activity p {
+  margin-bottom: 0px;
+}
 .plant-details .schedule div {
   height: 100px;
   width: 100%;
-    
 }
+
 #noDays{
   margin:0px !important;
-  padding:0px 50px 0px 40px;
+  padding:0px 50px 0px 50px;
   text-align: center;
 }
 
 #noOfWeeks{
   margin:0px !important;
-  padding:0px 50px 0px 40px;
+  padding:0px 50px 0px 50px;
 }
 .plant-details .schedule button {
     height: 50px;
     width: 50px;
     font-size: 20px;
-    background-color: #0a4f1d;
-    border: none;
-    color: white;
+    border:3px solid #0a4f1d;
+ background-color: transparent;
+    color: #0a4f1d;
     border-radius: 100%;
 }
 

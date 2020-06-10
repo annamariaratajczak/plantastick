@@ -137,7 +137,7 @@ function createSchedule(plant) {
 
     const minusWater = document.createElement('button');
     spanWater.appendChild(minusWater);
-    minusWater.textContent = "-";
+    minusWater.textContent = "−";
     minusWater.setAttribute("id", "minus_W_button")
 
     const noDays = document.createElement('h2');
@@ -223,7 +223,7 @@ function createSchedule(plant) {
 
     const minusfert = document.createElement('button');
     spanfert.appendChild(minusfert);
-    minusfert.textContent = "-";
+    minusfert.textContent = "−";
     minusfert.setAttribute("id", "minus_F_button")
 
     const noOfWeeks = document.createElement('h2');
