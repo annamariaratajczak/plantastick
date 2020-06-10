@@ -44,10 +44,16 @@ function plantItem(plant, urlIndex) {
     
     let waterDone = document.createElement("button");
     buttons.appendChild(waterDone);
-    waterDone.setAttribute("class", "checkBtns");
     waterDone.textContent = "Mark as watered";
-    waterDone.classList.add("class", "doneBtnsDisabled");
-    waterDone.classList.add("class", "doneBtnsActive");
+    waterDone.classList.add("class", "doneBtns");
+   
+    if (isTodayWater == "today" || isTodayWater.includes("due")) {
+        waterDone.disabled = false;
+    } else {
+        waterDone.disabled = true;
+    }
+
+        
 
     waterDone.onclick = function() {
         waterDone.disabled = true;
@@ -57,24 +63,21 @@ function plantItem(plant, urlIndex) {
         console.log("now is" + nowFormat); 
         plant.lastWatering = nowFormat;
         savePlantsLocalStorage();    
-        
-        // if (waterDone.disabled = true) {
-        //     waterDone.classList.remove("doneBtnsActive")
-        // } else {
-        //     waterDone.classList.remove("doneBtnsDisabled")
-        // }
+         
     }
-    // function redDot() {
-    //     let redBadge = document.getElementById("redBadge");
-    //     redBadge.classList.remove("hideBadge");
-    //     return redBadge 
+  
 
 
     let fertilizingDone = document.createElement("button");
     buttons.appendChild(fertilizingDone);
-    fertilizingDone.setAttribute("class", "doneBtns-Activ");
-    fertilizingDone.setAttribute("class", "doneBtns-Disabled");
+    fertilizingDone.setAttribute("class", "doneBtns");
     fertilizingDone.textContent = "Mark as fertilized";
+
+    if (isTodayFert == "today" || isTodayFert.includes("due")) {
+        fertilizingDone.disabled = false;
+    } else {
+        fertilizingDone.disabled = true;
+    }
     
     fertilizingDone.onclick = function () {
         fertilizingDone.disabled = true;

@@ -160,7 +160,7 @@ margin-bottom: 0px !important;
   flex-direction: column;
 }
 
-.plant-details span {
+.plant-details .activity span {
     display: flex;
   align-items: center;
   justify-content: center;
@@ -240,11 +240,12 @@ margin-top: 0 !important;
   object-fit: cover;
 }*/
 .round{
-margin-top: 30px;
+margin-top: 50px;
 }
+
 .photo {
-  height: 320px;
-  width: 320px;
+  height: 250px;
+  width: 250px;
   border-radius: 100%;
   object-fit: cover;
 }
@@ -254,15 +255,15 @@ top:6px;
 
 }
 
-.doneBtnsActive {
+.doneBtns {
  background-color: #0a4f1d !important;
   color:#BCD5D5 !important;
 }
 
-.doneBtnsDisabled {
-  background-color:white;
-  color:#BCD5D5;
-  border: 1px solid #BCD5D5;
+.doneBtns:disabled {
+  background-color:white !important;
+  color:#BCD5D5 !important;
+  border: 1px solid #BCD5D5 !important;
 }
 
 

@@ -57,8 +57,7 @@ function nextAction(last, schedule, unit) {
   }
 }
 function dateFormat(date) {
-  let changeFormat = moment(date);
-
+  let changeFormat = moment(date, "DD-MM-YYYY");
   return changeFormat.format("DD-MM-YYYY");
 }
 
