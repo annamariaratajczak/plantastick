@@ -11,8 +11,8 @@ body {
   font-size: normal;
 }
 
-.content {
-
+h1 {
+  font-size: 20px !important;
 }
 
 .bgwhiteleaves {
@@ -31,44 +31,36 @@ body {
   
   object-fit: cover;
 }
-
-.navBar {
-    background-color: blueviolet;
-    height: 30pt;
-}
-
-
-
-.fa-plus {
-    font-size: 30px;
-}
-
-.fa-seedling {
-  font-size: 30px;
-}
-
- .fa-clock {
-   font-size: 30px;
- }
-
- .fa-ellipsis-h {
-font-size: 30px;
- }
-
- .fa-ellipsis-v {
-   font-size: 20px;
-   padding-right: 10px;
- }
  
- .fa-camera {
+
+
+.navigate-right::after {
+   right:30px !important;
+   color: #BCD5D5 !important;
+}
+
+.navigate-right img{
+ margin-left: 30px !important;
+}
+
+.table-view-cell > a:not(.btn) {
+    position: relative;
+    display: block;
+    padding: inherit;
+    margin: -10px -70px -10px -20px;
+padding: 10px 10px 10px 10px;
+}
+
+ .cameraIcon {
    font-size: 30px;
    padding-right: 20px;
    z-index: 10;
   position: fixed;
-  top: 233px;
+  top: 245px;
   bottom: 0;
   left: 100;
   right: 0;
+  color: #BCD5D5;
  }
 
  .content a {
@@ -103,10 +95,14 @@ font-size: 30px;
 }
 
 .liPlantImg {
-    width: 150px !important;
- height:100px !important;
-  object-fit: cover;
+ width: 110px !important;
+ height:110px !important;
+object-fit: cover;
+border: 1px solid #BCD5D5;
+border-radius: 100px;
 }
+
+
 
 .plant-list span i {
   margin: 10px 10px 5px 0px;
@@ -114,10 +110,15 @@ font-size: 30px;
 
 .plant-list .plant-name {
 white-space: nowrap; 
-  width: 100%; 
+  width: 150px; 
   overflow: hidden;
   text-overflow: ellipsis; 
+  margin-left: 10px;
+  font-weight: bold;
+  text-align: center;
 }
+
+
 
 .fa-tint {
   font-size: 20px;
@@ -159,14 +160,14 @@ margin-bottom: 0px !important;
   flex-direction: column;
 }
 
-.plant-details .schedule span {
+.plant-details span {
     display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
 
-.plant-details .schedule .activity {
+.plant-details .activity {
     display: flex;
   align-items: center;
   justify-content: center;
@@ -184,16 +185,32 @@ margin-top: 0 !important;
     padding-right: 50px;
 }
 
+.activity p {
+  margin-bottom: 0px;
+}
 .plant-details .schedule div {
   height: 100px;
   width: 100%;
-    
 }
 
+#noDays{
+  margin:0px !important;
+  padding:0px 50px 0px 50px;
+  text-align: center;
+}
 
+#noOfWeeks{
+  margin:0px !important;
+  padding:0px 50px 0px 50px;
+}
 .plant-details .schedule button {
     height: 50px;
     width: 50px;
+    font-size: 20px;
+    border:3px solid #0a4f1d;
+ background-color: transparent;
+    color: #0a4f1d;
+    border-radius: 100%;
 }
 
 .plant-details .save-button {
@@ -210,20 +227,72 @@ margin-top: 0 !important;
   
 }
 
+.cancelBtn {
+  margin-left: 12px !important;
+  margin-top: 7px !important;
+  color:#0a4f1d !important;
+}
 
-.photo {
+
+/*.photo {
   height:250px;
   width: 100%;
   object-fit: cover;
+}*/
+.round{
+margin-top: 30px;
+}
+.photo {
+  height: 320px;
+  width: 320px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.media-body img {
+top:6px;
+
+}
+
+.doneBtnsActive {
+ background-color: #0a4f1d !important;
+  color:#BCD5D5 !important;
+}
+
+.doneBtnsDisabled {
+  background-color:white;
+  color:#BCD5D5;
+  border: 1px solid #BCD5D5;
 }
 
 
+.plant-name-div input {
+    width: auto;
+    margin: 10px 0px 20px 10px;
+    border: none !important;
+  
+  }
 
+
+
+.input-field input {
+    margin: 10px 0px 20px 10px;
+    width: auto;
+    border: none !important;
+}
 
 .plant-name-div {
   margin-top: 30px;
+  
+}
+.bar-nav {
+  border-bottom:#BCD5D5 !important;
 }
 
+.bar-tab{
+  border-top:1px solid #BCD5D5 !important;
+  
+}
 .plant-name-div input {
 width: auto;
 }
@@ -236,23 +305,48 @@ width: auto;
   display: inline-block;
 }
 
+#myPlantList{
+  margin-top: 12px !important;
+  margin-bottom: 15px!important;
+}
+
 #myPlantList button {
   width: 50%;
   padding: 5px;
 }
 
+#myPlantList li{
+border-bottom: 1px solid #BCD5D5;
+}
+
+.table-view-cell > a:not(.btn) {
+  
+    margin: -10px -70px -10px -20px !important;
+
+}
+
 #plant-notes {
   padding-top: 10px;
   padding-bottom: 50px;
+  border: none;
 }
 
-.schedule {
-  margin-bottom: 20px;
+h4 {
+  margin-left: 5px !important;
 }
+.plant-notes-div {
+  margin-bottom: 50px;
+  
+}
+.plant-notes-div-saved {
+  margin-bottom: 80px !important;
+  margin-top: 40px;
+}
+
 
 .input-field input{
   margin-top: 20px;
-  width: auto;
+  width: 150px;
 
 }
 
@@ -292,8 +386,11 @@ width: auto;
 }
 
 .careIcons {
-  width: 37px;
+  width: 25px;
   margin-top: 5px;
+margin-right: 10px;;
+  position: relative;
+  top:20;
 }
 
 .modal1 {
@@ -306,25 +403,24 @@ width: auto;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(213, 219, 212, 0.4); /* Fallback color */
+  
   
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color:white;
   margin: auto;
   padding: 10px 20px 20px 20px;
   margin-top: 40%;
-  border: 1px solid #888;
+  border: 1px solid #0a4f1d;
   width: 80%;
   height: 25%;
   
 }
 .modal-content p {
-  font-size: 16px;
-  margin-bottom: 30px;
-  margin-top: 35px;
-
+  font-size: 18px;
+  margin-bottom: 35px;
+  margin-top: 40px;
 }
 
 .modal-content button {
@@ -332,11 +428,13 @@ width: auto;
   border: none;
   margin-left: 70px;
   text-align: right;
+  color:  #0a4f1d;
+  font-size: 20px;
 }
 .close {
-  color: black;
+  color:  #0a4f1d;
   float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   margin: auto;
   margin-left:100px;
@@ -349,6 +447,8 @@ width: auto;
 .bar-nav {
   background-color: #BCD5D5;
   height: 58px;
+  margin-bottom: 5px;
+
 }
 .title{
   padding: 6px;

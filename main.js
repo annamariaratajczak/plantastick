@@ -24,7 +24,7 @@ function redDot() {
   redBadge.classList.remove("hideBadge");
   return redBadge;
 }
-// redDot();
+//redDot();
 
 function displayPlaceHolderText(notes) {
   console.log(notes);
