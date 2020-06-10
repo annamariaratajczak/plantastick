@@ -1,5 +1,5 @@
 let urlIndex = 0;
-function redDot(){
+function redDot() {
     let redBadge = document.getElementById("redBadge");
     redBadge.classList.remove("hideBadge");
     return redBadge
@@ -13,7 +13,7 @@ for (plant of myPlants) {
 
     if (isTodayWater == "today" || isTodayFert == "today" || isTodayWater.includes("due") || isTodayFert.includes("due")) {
 
-    redDot();
+        redDot();
         plantItem(plant, urlIndex);
     }
 
@@ -41,31 +41,30 @@ function plantItem(plant, urlIndex) {
 
     let buttons = document.createElement("li");
     list.appendChild(buttons);
-    
+
     let waterDone = document.createElement("button");
     buttons.appendChild(waterDone);
     waterDone.textContent = "Mark as watered";
     waterDone.classList.add("class", "doneBtns");
-   
+
     if (isTodayWater == "today" || isTodayWater.includes("due")) {
         waterDone.disabled = false;
     } else {
         waterDone.disabled = true;
     }
 
-        
 
-    waterDone.onclick = function() {
+
+    waterDone.onclick = function () {
         waterDone.disabled = true;
 
         let now = moment();
         let nowFormat = now.format("DD-MM-YYYY");
-        console.log("now is" + nowFormat); 
         plant.lastWatering = nowFormat;
-        savePlantsLocalStorage();    
-         
+        savePlantsLocalStorage();
+
     }
-  
+
 
 
     let fertilizingDone = document.createElement("button");
@@ -78,18 +77,17 @@ function plantItem(plant, urlIndex) {
     } else {
         fertilizingDone.disabled = true;
     }
-    
+
     fertilizingDone.onclick = function () {
         fertilizingDone.disabled = true;
         let now = moment();
         let nowFormat = now.format("DD-MM-YYYY");
-        console.log("now is" + nowFormat);
         plant.lastFertilizing = nowFormat;
-        savePlantsLocalStorage(); 
-  }
+        savePlantsLocalStorage();
+    }
 
     fertilizingDone.textContent = "Mark as fertilized";
-   
+
 
     let itemImg = document.createElement("img");
     itemLink.appendChild(itemImg);
@@ -115,7 +113,7 @@ function plantItem(plant, urlIndex) {
         itemParameters.appendChild(waterSpan);
 
         const iconWater = document.createElement('img');
-    
+
         iconWater.setAttribute("class", "careIcons");
         iconWater.setAttribute("src", "img/waterdropiconnew.svg")
         waterSpan.appendChild(iconWater);
@@ -127,7 +125,7 @@ function plantItem(plant, urlIndex) {
     } else {
         waterDone.disabled = true;
     }
-    
+
 
 
     if (isTodayFert == "today" || isTodayFert.includes("due")) {
@@ -140,15 +138,24 @@ function plantItem(plant, urlIndex) {
         iconFert.setAttribute("class", "careIcons");
         const fText = document.createTextNode(nextAction(plant.lastFertilizing, plant.fertilizingSchedule, "week"));
         fertSpan.appendChild(fText);
-      
-        
-    
-    } else {
-            fertilizingDone.disabled = true;
-        }
 
-    
+
+
+    } else {
+        fertilizingDone.disabled = true;
+    }
+
+
 }
 
 
-
+function changeBGSchedule() {
+    let background = document.getElementById("contentBG");
+    console.log(document.getElementById("myPlantList").children.length != 0)
+    if (document.getElementById("myPlantList").children.length > 0) {
+        background.classList.add("bggreenleaves");
+    } else {
+        background.classList.add("bgNoToDo");
+    }
+}
+changeBGSchedule()

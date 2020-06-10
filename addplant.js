@@ -3,7 +3,6 @@ let fertalizeWeeks = 3;
 
 function createPhoto(plant) {
 
-    console.log(plant);
     let div = document.createElement("div");
     div.setAttribute("class", "round");
     let img = document.createElement("img");
@@ -82,7 +81,7 @@ function createPhoto(plant) {
     let camIcon = document.createElement("img");
     label.appendChild(camIcon);
     camIcon.setAttribute("class", "cameraIcon");
-    camIcon.setAttribute("src", "img/cameradarkgreen.svg");
+    camIcon.setAttribute("src", "img/cameradarkgreen.png");
 
     return div
 }
@@ -185,7 +184,7 @@ function createSchedule(plant) {
     function maxDate() {
         //https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
         var today = new Date();
-        console.log(today);
+       
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
         var yyyy = today.getFullYear();
@@ -269,7 +268,6 @@ function createSchedule(plant) {
     if (plant != null) {
 
         lastFertInput.value = moment(plant.lastFertilizing, "DD-MM-YYYY").format("YYYY-MM-DD");
-        console.log(plant.lastFertilizing)
     }
 
     return scheduleDiv
@@ -321,16 +319,18 @@ function addPlant() {
     };
 
     let plantUrl = getPlantIndex();
-
+    let plantIndex;
     if (plantUrl == null) {
-        myPlants.push(newPlant);
+        plantIndex = myPlants.push(newPlant) - 1;
     } else {
+        plantIndex = plantUrl;
         myPlants[plantUrl] = newPlant;
     }
 
     savePlantsLocalStorage()
-    window.location.replace("index.html");
+    window.location.replace("plant.html?plant=" + plantIndex);
 }
+
 
 
 
@@ -342,7 +342,6 @@ function daystoWater(plant) {
     document.getElementById("plus_W_button").onclick = function () {
         let add = waterDays++;
         document.getElementById("noDays").textContent = waterDays;
-        console.log(add);
         if (waterDays > 30) {
             document.getElementById("noDays").textContent = 30;
             waterDays = 30;
@@ -353,7 +352,6 @@ function daystoWater(plant) {
     document.getElementById("minus_W_button").onclick = function () {
         let minus = waterDays--;
         document.getElementById("noDays").textContent = waterDays;
-        console.log(minus);
         if (waterDays < 2) {
             document.getElementById("noDays").textContent = 1;
             waterDays = 1;
@@ -370,7 +368,6 @@ function weekstoFertalize(plant) {
     document.getElementById("plus_F_button").onclick = function () {
         let add = fertalizeWeeks++;
         document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
-        console.log(add);
         if (fertalizeWeeks > 54) {
             document.getElementById("noOfWeeks").textContent = 54;
             fertalizeWeeks = 54;
@@ -380,7 +377,6 @@ function weekstoFertalize(plant) {
     document.getElementById("minus_F_button").onclick = function () {
         let minus = fertalizeWeeks--;
         document.getElementById("noOfWeeks").textContent = fertalizeWeeks;
-        console.log(minus);
         if (fertalizeWeeks < 2) {
             document.getElementById("noOfWeeks").textContent = 1;
             fertalizeWeeks = 1;
@@ -399,8 +395,6 @@ if (plantUrl != null) {
 } else {
     pageHeadline.textContent = "Add plant";
 }
-
-console.log(plantUrl)
 let content = document.getElementById("content");
 
 //function createPhoto

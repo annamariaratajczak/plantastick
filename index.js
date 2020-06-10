@@ -67,3 +67,24 @@ function plantItem(plant, urlIndex) {
 }
 
 
+function changeBGHome() {
+    let background = document.getElementById("contentBG");
+    console.log(document.getElementById("myPlantList").children.length !=0)
+    if (document.getElementById("myPlantList").children.length > 0) {
+        background.classList.add("bggreenleaves");
+    } else {
+        background.classList.add("bgAddPlant");
+    }
+}
+changeBGHome()
+    
+function changeBGSchedule() {
+    let background = document.getElementById("contentBG");
+    console.log(document.getElementById("myPlantList").children.length != 0)
+    if (document.getElementById("myPlantList").children.length > 0) {
+        background.classList.add("bggreenleaves");
+    } else {
+        background.classList.add("bgAddPlant");
+    }
+}
+changeBGSchedule()
