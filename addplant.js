@@ -148,6 +148,7 @@ function createSchedule(plant) {
 
         noDays.textContent = waterDays;
     } else {
+        
         noDays.textContent = plant.wateringSchedule;
     } 
 
