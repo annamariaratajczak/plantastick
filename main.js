@@ -20,16 +20,15 @@ let myPlants = [
 ];
 function redDot() {
   let redBadge = document.getElementById("redBadge");
-  console.log(redBadge);
   redBadge.classList.remove("hideBadge");
   return redBadge;
 }
 //redDot();
 
 function displayPlaceHolderText(notes) {
-  console.log(notes);
+
   if (notes == "" || typeof notes === "undefined") {
-    console.log(notes);
+
     return (notes = "Click on Edit to add a note.");
   } else {
     return notes;
@@ -42,11 +41,11 @@ function nextAction(last, schedule, unit) {
   //var duration = moment.duration(x.diff(y))
   // returns duration object with the duration between x and y
 
-  let nextDate = moment(last).add(schedule, unit);
+  let nextDate = moment(last, "DD-MM-YYYY").add(schedule, unit);
   let today = moment();
   var difference = moment.duration(nextDate.diff(today));
   var days = difference.as("days");
-  console.log(days);
+
   if (days <= -1) {
     return "due " + Math.abs(Math.round(days)) + " days";
   }
@@ -57,8 +56,7 @@ function nextAction(last, schedule, unit) {
   }
 }
 function dateFormat(date) {
-  let changeFormat = moment(date);
-
+  let changeFormat = moment(date, "DD-MM-YYYY");
   return changeFormat.format("DD-MM-YYYY");
 }
 
@@ -95,21 +93,21 @@ for (plant of myPlants) {
 
 function savePlantsLocalStorage() {
 
-  console.log(myPlants);
+
   let plantsAsJsonString = JSON.stringify(myPlants);
-  console.log(plantsAsJsonString);
+
   localStorage.setItem("myPlant", plantsAsJsonString);
 
 }
 
 function getPlantIndex() {
-const queryString = window.location.search;
-console.log(queryString);
-//plant.html?plant=0
+  const queryString = window.location.search;
 
-const urlParams = new URLSearchParams(queryString);
+  //plant.html?plant=0
 
-const plantUrl = urlParams.get('plant')
+  const urlParams = new URLSearchParams(queryString);
+
+  const plantUrl = urlParams.get('plant')
   return plantUrl;
-  
+
 }

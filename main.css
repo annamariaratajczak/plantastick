@@ -13,20 +13,37 @@ body {
 
 h1 {
   font-size: 20px !important;
+  color: #002A02 !important;
 }
 
-.bgwhiteleaves {
-  background-image: url("img/BIGbgwhiteleaves.svg") !important;
-  background-size: initial;
+.bgAddPlant {
+  background: url("img/myPlants.png") no-repeat center top  !important;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+.bgNoToDo {
+  background: url("img/TodayBG.png") no-repeat center top  !important;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 .bgnoleaves {
   background-image: url("img/BIGbgplain.svg") !important;
   background-size: initial;
 }
+
 .bggreenleaves {
   background-image: url("img/BigBGwithleaves.svg") !important;
   background-size: initial;
-}
+
+} 
+
 .content img {
   
   object-fit: cover;
@@ -56,7 +73,7 @@ padding: 10px 10px 10px 10px;
    padding-right: 20px;
    z-index: 10;
   position: fixed;
-  top: 245px;
+  top: 222px;
   bottom: 0;
   left: 100;
   right: 0;
@@ -139,6 +156,11 @@ white-space: nowrap;
 margin-bottom: 0px !important;
 }
 
+
+.listBorder {
+border-bottom: none !important;
+}
+
 .content {
   padding-bottom: 30pt;
   padding-top: 30pt;
@@ -160,7 +182,7 @@ margin-bottom: 0px !important;
   flex-direction: column;
 }
 
-.plant-details span {
+.plant-details .activity span {
     display: flex;
   align-items: center;
   justify-content: center;
@@ -175,6 +197,18 @@ margin-bottom: 0px !important;
   margin-top: 40px;
 }
 
+h3 {
+  color: #002A02 !important;
+}
+
+h2 {
+  color: #002A02 !important;
+}
+
+label {
+  color: #002A02 !important;
+}
+
 .activity h3 {
 margin-top: 0 !important;
 
@@ -185,8 +219,12 @@ margin-top: 0 !important;
     padding-right: 50px;
 }
 
+p{
+  color:  rgb(95, 95, 95) !important;
+}
 .activity p {
   margin-bottom: 0px;
+  color: rgb(95, 95, 95) !important;
 }
 .plant-details .schedule div {
   height: 100px;
@@ -207,9 +245,9 @@ margin-top: 0 !important;
     height: 50px;
     width: 50px;
     font-size: 20px;
-    border:3px solid #0a4f1d;
+    border:3px solid #255f28;
  background-color: transparent;
-    color: #0a4f1d;
+    color: #255f28;
     border-radius: 100%;
 }
 
@@ -223,46 +261,54 @@ margin-top: 0 !important;
   margin-right: 12px !important;
   margin-top: 7px !important;
   /* color:#002A02 !important; */
-  color:#000000 !important;
+  color:#255f28 !important;
   
 }
 
 .cancelBtn {
   margin-left: 12px !important;
   margin-top: 7px !important;
-  color:#0a4f1d !important;
+  color:#255f28 !important;
 }
 
 
-/*.photo {
+.photo {
   height:250px;
   width: 100%;
   object-fit: cover;
-}*/
-.round{
-margin-top: 30px;
 }
-.photo {
-  height: 320px;
-  width: 320px;
-  border-radius: 100%;
-  object-fit: cover;
+
+
+.media-body span {
+    color: #002A02 !important;
 }
+
 
 .media-body img {
 top:6px;
-
 }
 
-.doneBtnsActive {
- background-color: #0a4f1d !important;
-  color:#BCD5D5 !important;
+.media-body {
+  margin-top: 12px !important;
 }
 
-.doneBtnsDisabled {
-  background-color:white;
-  color:#BCD5D5;
-  border: 1px solid #BCD5D5;
+.doneBtns {
+ background-color:#255f28 !important;
+  color:white !important;
+  display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(59, 59, 59, 0.3);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  font-family: BalooThambi2 !important;
+}
+
+.doneBtns:disabled {
+  background-color:white !important;
+  color:rgb(238, 238, 238) !important;
+  border: 1px solid #BCD5D5 !important;
 }
 
 
@@ -276,10 +322,11 @@ top:6px;
 
 
 .input-field input {
-    margin: 10px 0px 20px 10px;
-    width: auto;
+    margin: 20px 0px 20px 10px;
+    width: 180px;
     border: none !important;
 }
+
 
 .plant-name-div {
   margin-top: 30px;
@@ -313,6 +360,8 @@ width: auto;
 #myPlantList button {
   width: 50%;
   padding: 5px;
+  border: 1px solid #BCD5D5;
+  border-radius: 3px;
 }
 
 #myPlantList li{
@@ -344,11 +393,7 @@ h4 {
 }
 
 
-.input-field input{
-  margin-top: 20px;
-  width: 150px;
 
-}
 
 
 .input-field label {
@@ -412,7 +457,7 @@ margin-right: 10px;;
   margin: auto;
   padding: 10px 20px 20px 20px;
   margin-top: 40%;
-  border: 1px solid #0a4f1d;
+  border: 1px solid #255f28;
   width: 80%;
   height: 25%;
   
@@ -421,6 +466,8 @@ margin-right: 10px;;
   font-size: 18px;
   margin-bottom: 35px;
   margin-top: 40px;
+  color: rgb(95, 95, 95) !important
+
 }
 
 .modal-content button {
@@ -428,11 +475,11 @@ margin-right: 10px;;
   border: none;
   margin-left: 70px;
   text-align: right;
-  color:  #0a4f1d;
+  color:  #255f28;
   font-size: 20px;
 }
 .close {
-  color:  #0a4f1d;
+  color:  #255f28;
   float: right;
   font-size: 30px;
   font-weight: bold;

@@ -26,7 +26,7 @@ function createName(plant) {
 
     let name = document.createElement("h2");
     div.appendChild(name);
-    console.log(plant);
+
     name.textContent = plant.name;
  
 
@@ -158,10 +158,11 @@ function deletePlant() {
 
 }
 
+
+
 function yesDelete() {
     myPlants.splice(plantUrl, 1);
-    console.log(plantUrl);
-    console.log(myPlants);
+
     savePlantsLocalStorage()
     window.location.replace("index.html");
  
