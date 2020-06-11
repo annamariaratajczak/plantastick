@@ -178,7 +178,7 @@ function createSchedule(plant) {
 
     if (plant != null) {
 
-        lastWaterInput.value = moment(plant.lastWatering, "DD-MM-YYYY").format("YYYY-MM-DD");
+        lastWaterInput.value = moment(plant.lastWatering, "YYYY-MM-DD").format("DD-MM-YYYY");
     }
 
     function maxDate() {
@@ -267,7 +267,7 @@ function createSchedule(plant) {
     lastFertInput.classList.add("class", "inputStyle");
     if (plant != null) {
 
-        lastFertInput.value = moment(plant.lastFertilizing, "DD-MM-YYYY").format("YYYY-MM-DD");
+        lastFertInput.value = moment(plant.lastFertilizing, "YYYY-MM-DD").format("DD-MM-YYYY");
     }
 
     return scheduleDiv

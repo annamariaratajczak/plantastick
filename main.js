@@ -41,7 +41,7 @@ function nextAction(last, schedule, unit) {
   //var duration = moment.duration(x.diff(y))
   // returns duration object with the duration between x and y
 
-  let nextDate = moment(last, "DD-MM-YYYY").add(schedule, unit);
+  let nextDate = moment(last, "YYYY-MM-DD").add(schedule, unit);
   let today = moment();
   var difference = moment.duration(nextDate.diff(today));
   var days = difference.as("days");
@@ -56,7 +56,7 @@ function nextAction(last, schedule, unit) {
   }
 }
 function dateFormat(date) {
-  let changeFormat = moment(date, "DD-MM-YYYY");
+  let changeFormat = moment(date, "YYYY-MM-DD");
   return changeFormat.format("DD-MM-YYYY");
 }
 
