@@ -145,7 +145,7 @@ function deletePlant() {
     return modal
 
 
-    //don't remove - the confirm default browser window
+    // don't remove - the confirm default browser window
     // var r = confirm("Would you like to delete your plant?");
     // if (r == true) {
 
