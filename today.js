@@ -30,6 +30,7 @@ function plantItem(plant, urlIndex) {
     list.appendChild(item);
     item.classList.add("table-view-cell");
     item.classList.add("media");
+    item.classList.add("listBorder");
 
     let itemLink = document.createElement("a");
     item.appendChild(itemLink);
