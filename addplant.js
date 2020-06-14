@@ -10,15 +10,15 @@ function createPhoto(plant) {
     img.classList.add("photo");
     //to edit the content of the page
     if (plant == null) {
-    
+
         img.setAttribute("src", "img/placeholderbigger.svg");
     } else {
         img.setAttribute("src", plant.img);
     }
-        
+
     img.setAttribute("alt", "plant-photo");
     img.setAttribute("id", "photo");
- 
+
 
     let inputButton = document.createElement("input");
     div.appendChild(inputButton);
@@ -102,12 +102,12 @@ function createName(plant) {
         input.value = "";
     } else {
         input.value = plant.name;
-    } 
+    }
 
     input.setAttribute("type", "text");
     input.setAttribute("id", "plant-name")
     input.setAttribute("name", "plant-name");
-    
+
     input.classList.add("class", "inputStyle");
 
     return div
@@ -142,15 +142,15 @@ function createSchedule(plant) {
     const noDays = document.createElement('h2');
     noDays.setAttribute("id", "noDays");
     spanWater.appendChild(noDays);
-    
+
 
     if (plant == null) {
 
         noDays.textContent = waterDays;
     } else {
-        
+
         noDays.textContent = plant.wateringSchedule;
-    } 
+    }
 
 
     const plusWater = document.createElement('button');
@@ -175,17 +175,17 @@ function createSchedule(plant) {
     lastWater.appendChild(lastWaterInput);
     lastWaterInput.setAttribute("type", "date");
     lastWaterInput.classList.add("class", "inputStyle");
-    
+
 
     if (plant != null) {
 
-        lastWaterInput.value = moment(plant.lastWatering, "YYYY-MM-DD").format("DD-MM-YYYY");
+        lastWaterInput.value = plant.lastWatering;
     }
 
     function maxDate() {
         //https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
         var today = new Date();
-       
+
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
         var yyyy = today.getFullYear();
@@ -235,8 +235,8 @@ function createSchedule(plant) {
         noOfWeeks.textContent = fertalizeWeeks;
     } else {
         noOfWeeks.textContent = plant.fertilizingSchedule;
-    } 
-    
+    }
+
 
     const plusfert = document.createElement('button');
     spanfert.appendChild(plusfert);
@@ -252,7 +252,7 @@ function createSchedule(plant) {
     const lastFert = document.createElement('div');
     scheduleDiv.appendChild(lastFert);
     lastFert.classList.add("input-field");
-    
+
 
     lastFertLabel = document.createElement("label");
     lastFert.appendChild(lastFertLabel);
@@ -268,7 +268,7 @@ function createSchedule(plant) {
     lastFertInput.classList.add("class", "inputStyle");
     if (plant != null) {
 
-        lastFertInput.value = moment(plant.lastFertilizing, "YYYY-MM-DD").format("DD-MM-YYYY");
+        lastFertInput.value = plant.lastFertilizing;
     }
 
     return scheduleDiv
@@ -296,7 +296,7 @@ function createNotes(plant) {
 
         input.value = plant.notes;
     }
-    
+
     return div
 }
 

@@ -60,7 +60,7 @@ function plantItem(plant, urlIndex) {
         waterDone.disabled = true;
 
         let now = moment();
-        let nowFormat = now.format("DD-MM-YYYY");
+        let nowFormat = now.format("YYYY-MM-DD");
         plant.lastWatering = nowFormat;
         savePlantsLocalStorage();
 
@@ -82,7 +82,7 @@ function plantItem(plant, urlIndex) {
     fertilizingDone.onclick = function () {
         fertilizingDone.disabled = true;
         let now = moment();
-        let nowFormat = now.format("DD-MM-YYYY");
+        let nowFormat = now.format("YYYY-MM-DD");
         plant.lastFertilizing = nowFormat;
         savePlantsLocalStorage();
     }

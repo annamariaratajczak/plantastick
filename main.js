@@ -57,7 +57,7 @@ function nextAction(last, schedule, unit) {
 }
 function dateFormat(date) {
   let changeFormat = moment(date, "YYYY-MM-DD");
-  return changeFormat.format("DD-MM-YYYY");
+  return changeFormat.format("YYYY-MM-DD");
 }
 
 function loadPlants() {
@@ -103,7 +103,7 @@ function savePlantsLocalStorage() {
 function getPlantIndex() {
   const queryString = window.location.search;
 
-  //plant.html?plant=0
+  //plant.html=0
 
   const urlParams = new URLSearchParams(queryString);
 

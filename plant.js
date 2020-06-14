@@ -28,7 +28,7 @@ function createName(plant) {
     div.appendChild(name);
 
     name.textContent = plant.name;
- 
+
 
     return div
 }
@@ -79,7 +79,7 @@ function createScheduleWater(plant) {
     return waterDiv
 }
 
-    function createScheduleFertilized(plant) {
+function createScheduleFertilized(plant) {
 
     let fertDiv = document.createElement("div");
     fertDiv.classList.add("activity");
@@ -139,7 +139,7 @@ function createNotes(plant) {
 }
 function deletePlant() {
     var modal1 = document.getElementById("myModal");
-      
+
     modal1.style.display = "block";
 
     return modal
@@ -165,8 +165,8 @@ function yesDelete() {
 
     savePlantsLocalStorage()
     window.location.replace("index.html");
- 
-}    
+
+}
 
 function cancelDelete() {
     var modal1 = document.getElementById("myModal");
@@ -175,7 +175,7 @@ function cancelDelete() {
 
 let content = document.getElementById("content");
 let editPage = document.getElementById("addButton");
-editPage.setAttribute("href", "addplant.html?plant=" + plantUrl); 
+editPage.setAttribute("href", "addplant.html?plant=" + plantUrl);
 //function createPhoto
 let photo = createPhoto(myPlants[plantUrl]);
 content.appendChild(photo);
