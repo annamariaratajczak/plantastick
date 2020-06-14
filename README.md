@@ -9,5 +9,5 @@ This project was created by me and my school colleague Zahra Beigi - @z195. Belo
 ![](appGIFs/Care-notification-mark-as-done.gif)
 
 ### User can edit his plant parameters and remove unwanted plant-profile
-![](appGIFs/Care-notification-mark-as-done.gif)
+![](appGIFs/Delete-edit-plant-profile.gif)
  
