@@ -4,11 +4,7 @@ This project was created by me and my school colleague [Zahra Beigi](https://git
 
 ### Project presentation
 
-<object data="appGIFs/Project-presentation.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="appGIFs/Project-presentation.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="appGIFs/Project-presentation.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<a href="appGIFs/Project-presentation.pdf">Download the presentation</a>
 
 
 ### User can add his plants 
