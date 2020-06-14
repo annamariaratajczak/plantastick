@@ -16,10 +16,9 @@
     <script src="https://kit.fontawesome.com/9240eef849.js" crossorigin="anonymous"></script>
     <link href="css/ratchet.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-<link rel="icon" href="img/favicon.png">
-<link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="img/favicon.png">
     <!-- Include the compiled Ratchet JS -->
-  
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.js"></script>
 </head>
 
@@ -42,46 +41,47 @@
         </header>
 
         <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-        
+
         <div id="content" class="content plant-details bgnoleaves">
-            
+
 
             <div id="myModal" class="modal1">
                 <div class="modal-content">
-                  <button class="close" onclick=cancelDelete()><i class="fas fa-times"></i></button>
+                    <button class="close" onclick=cancelDelete()><i class="fas fa-times"></i></button>
                     <p>Would you like to delete this plant?</p>
-                    <span class="buttons"><button id=("cancelBtn") onclick=cancelDelete()>Cancel</button><button id="yesBtn" onclick=yesDelete()>Yes</button></span>
-                    
+                    <span class="buttons"><button id=("cancelBtn") onclick=cancelDelete()>Cancel</button><button
+                            id="yesBtn" onclick=yesDelete()>Yes</button></span>
+
                 </div>
 
 
 
-           <!--html for this part is created in JS-->
+                <!--html for this part is created in JS-->
 
-    
-    </div>
-    <a id="addButton" href="addplant.html" data-ignore="push"><img src="img/editicon.svg" alt="plus icon"></a>
-    <nav class="bar bar-tab">
-        <a class="tab-item notification" href="today.html" data-ignore="push">
-            <img src="img/scheduleicondeactive.svg" alt="plus icon"><span class="hideBadge redBadge" id="redBadge"><img
-                    class="redBadge" src="img/red-icon-SVG.svg" alt="plus icon"></span>
-    
-    
-        </a>
-        <a class="tab-item" href="index.html" data-ignore="push">
-            <img src="img/plantsicondeactive.svg" alt="plus icon">
-    
-        </a>
-        <a class="tab-item" href="#" data-ignore="push">
-            <img src="img/moreicondeactive.svg" alt="plus icon">
-    
-    
-        </a>
-    </nav>
-    </div>
-<script src="main.js"></script>
-    <script src="plant.js"></script>
-    
+
+            </div>
+            <a id="addButton" href="addplant.html" data-ignore="push"><img src="img/editicon.svg" alt="plus icon"></a>
+            <nav class="bar bar-tab">
+                <a class="tab-item notification" href="today.html" data-ignore="push">
+                    <img src="img/scheduleicondeactive.svg" alt="plus icon"><span class="hideBadge redBadge"
+                        id="redBadge"><img class="redBadge" src="img/red-icon-SVG.svg" alt="plus icon"></span>
+
+
+                </a>
+                <a class="tab-item" href="index.html" data-ignore="push">
+                    <img src="img/plantsicondeactive.svg" alt="plus icon">
+
+                </a>
+                <a class="tab-item" href="#" data-ignore="push">
+                    <img src="img/moreicondeactive.svg" alt="plus icon">
+
+
+                </a>
+            </nav>
+        </div>
+        <script src="main.js"></script>
+        <script src="plant.js"></script>
+
 </body>
 
 </html>

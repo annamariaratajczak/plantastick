@@ -16,10 +16,9 @@
     <script src="https://kit.fontawesome.com/9240eef849.js" crossorigin="anonymous"></script>
     <link href="css/ratchet.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-<link rel="icon" href="img/favicon.png">
-<link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="img/favicon.png">
     <!-- Include the compiled Ratchet JS -->
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.js"></script>
 </head>
 
@@ -28,12 +27,14 @@
     <div class="mainDiv">
         <!-- Make sure all your bars are the first things in your <body> -->
         <header class="bar bar-nav">
-            <a class="btn btn-link btn-nav pull-left cancelBtn" data-ignore="push"  onclick="window.history.go(-1); return false;">
+            <a class="btn btn-link btn-nav pull-left cancelBtn" data-ignore="push"
+                onclick="window.history.go(-1); return false;">
                 <span class="cancel-button">Cancel</span>
             </a>
             <h1 id="pageHeader" class="title"></h1>
 
-            <a class="btn btn-link btn-nav pull-right btn-dots saveBtn" data-ignore="push" href="#" onclick="addPlant()">
+            <a class="btn btn-link btn-nav pull-right btn-dots saveBtn" data-ignore="push" href="#"
+                onclick="addPlant()">
 
                 <span class="save-button">Save</span>
             </a>
@@ -42,7 +43,7 @@
 
         <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
         <div id="content" class="content plant-details bgnoleaves">
-<!--
+            <!--
             <div>
                 <img class="photo" src="img/plant2.jpg" alt="plant photo">
 
@@ -104,20 +105,20 @@
         <a class="tab-item notification" href="today.html" data-ignore="push">
             <img src="img/scheduleicondeactive.svg" alt="plus icon"><span class="hideBadge redBadge" id="redBadge"><img
                     class="redBadge" src="img/red-icon-SVG.svg" alt="plus icon"></span>
-    
-    
+
+
         </a>
         <a class="tab-item" href="index.html" data-ignore="push">
             <img src="img/plantsicondeactive.svg" alt="plus icon">
-    
+
         </a>
         <a class="tab-item" href="#" data-ignore="push">
             <img src="img/moreicondeactive.svg" alt="plus icon">
-    
-    
+
+
         </a>
     </nav>
-    
+
     </div>
     <script src="main.js"></script>
     <script src="addplant.js"></script>
