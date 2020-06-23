@@ -13,9 +13,9 @@ This project was created by me and my school colleague [Zahra Beigi](https://git
 ### User can add his plants 
 ![](appGIFs/Add-plant.gif)
 
-### User will be notified once he should water of fertilized his plant 
+### User will be notified once the plant should be water or fertilized plant 
 ![](appGIFs/Care-notification-mark-as-done.gif)
 
-### User can edit his plant parameters and remove unwanted plant-profile
+### User can edit his plant's parameters and remove unwanted plant-profile
 ![](appGIFs/Delete-edit-plant-profile.gif)
  
