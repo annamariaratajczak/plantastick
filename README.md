@@ -6,6 +6,9 @@ This project was created by me and my school colleague [Zahra Beigi](https://git
 
 <a href="appGIFs/Project-presentation.pdf">Download the presentation</a>
 
+### School DemoDay Presentation
+
+<a href="https://youtu.be/KnNvsIx1fHM?t=8838">Watch on Youtube</a>
 
 ### User can add his plants 
 ![](appGIFs/Add-plant.gif)
